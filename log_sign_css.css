@@ -1,0 +1,39 @@
+.mainsidelog a[name = icon_fb], .mainsidelog a[name = icon_ins], .mainsidelog a[name = icon_twi]{
+    font-size: 20px;
+}
+.mainsidelog a[name = icon_fb]{
+    margin-left: 700px;
+    margin-top: -10px;
+    margin-bottom: 20px;    
+}
+.mainsidelog a[name = icon_ins]{
+    margin-left: 20px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+.mainsidelog a[name = icon_twi]{
+    margin-left: 20px;
+    margin-top: -10px;
+    margin-bottom: 50px;
+}
+.mainsidelog a[name = icon_fb]:hover{
+    color: blue;
+}
+.mainsidelog a[name = icon_ins]:hover{
+    color: orange;
+}
+.mainsidelog a[name = icon_twi]:hover{
+    color: lightblue;
+}
+.mainsidelog h4{
+    margin-left: 670px;
+    margin-bottom: -10px;
+}
+hr.style-one {
+border: 0;
+height: 2px;
+background: black;
+background-color: black;
+color: black;
+
+}
