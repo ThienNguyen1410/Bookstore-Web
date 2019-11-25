@@ -16,7 +16,7 @@
         <link rel="stylesheet" type="text/css" href="log_sign_css.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <script type="text/javascript" src="./clock.js"></script>
-        <script type="text/javascript" src="./reg_check.js"></script>
+        <script type="text/javascript" src="./pass_check.js"></script>
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
         <title>Recreate your password</title>
     <div class="head">
@@ -47,7 +47,7 @@
         <style>
         .mainsidelog{
             width: 700px;
-            height: 300px;
+            height: 500px;
             background: whitesmoke;
             margin-top: 150px;
             margin-left: 35%;
@@ -69,6 +69,18 @@
             margin-top:80px;
             margin-left: 100px;
         }
+        
+        .mainsidelog .log input[name = enter_new_pass], input[name = confirm_new_pass]{
+            width: 500px; 
+            padding: 12px 20px; 
+            display: inline-block; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+            box-sizing: border-box; 
+            font-size: 30px; 
+            margin-top:30px;
+            margin-left: 100px;
+        }
         .mainsidelog .log input[name = change_pass]{
             font-size: 20px;
             margin-top: 20px; 
@@ -87,9 +99,16 @@
                   <tr>
                       <td>
                           <div class="log">
-                              <form  name="change_pass" action="Mail_receive" method="get">                                                              
-                                  <input name="enter_email" type="email" placeholder="Your email" required><br>
-                                  <input name="change_pass" type="submit" value="Continue">
+                              <form  name="change_pass_2" action="Pass_change" method="post">
+                                  <%
+                                  String email = request.getParameter("mail_re");
+                                  %>                                                              
+                                  <input name="enter_email" type="email" value="<%out.print(email); %> " readonly><br>
+                                  <input name="enter_new_pass" type="password" placeholder="Password"><br>
+                                  <label style="color: red" id="pass_change"></label><br> 
+                                  <input name="confirm_new_pass" type="password" placeholder="Confirm password"><br>
+                                  <label style="color: red" id="pass_change_check"></label><br> 
+                                  <input name="change_pass" type="submit" value="Change password">
                               </form>
                           </div>
                       </td>

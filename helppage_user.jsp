@@ -18,22 +18,23 @@
         <script type="text/javascript" src="./clock.js"></script>
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
         <title>BestBook_home</title>
-     <div class="position-sticky">
     <div class="head">
     <form name="head1">
         <table name="table1" width="97%">
             <tr>
-                <td><h1>&nbsp&nbsp&nbsp<i class='fas fa-book-open' style="color: white; font-size: 40px;"><a name="title" href="bookstore_home.jsp" style="font-family: Impact; color: whitesmoke;text-decoration: none; "> BookForYou </a></i></h1></td>
+                <td><h1>&nbsp&nbsp&nbsp<i class='fas fa-book-open' style="color: white; font-size: 40px;"><a name="title" href="bookstore_home_user.jsp" style="font-family: Impact; color: whitesmoke;text-decoration: none; "> BookForYou </a></i></h1></td>
                 <td align="right">
-                    <box><i name ="option" class='far fa-grin-squint'> <a name="option" href="login_signin.jsp">Log in/Join us |</a></i></box>&nbsp&nbsp&nbsp
-                    <box><i name ="option" class='far fa-question-circle'><a name="option" href="helppage.jsp"> Help |</a></i></box>&nbsp&nbsp&nbsp
-                    <box><i name ="option" class='fas fa-comment-alt'><a name="option" href="contact.jsp"> Contact us</a></i></box>
+                    <box><i name ="option" class='far fa-grin-squint'> <a name="option" href="profile_user.jsp"><%= session.getAttribute("username")%> |</a></i></box>&nbsp&nbsp&nbsp
+                    <box><i name ="option" class='far fa-question-circle'><a name="option" href="helppage_user.jsp"> Help |</a></i></box>&nbsp&nbsp&nbsp
+                    <box><i name ="option" class='fas fa-comment-alt'><a name="option" href="contact_user.jsp"> Contact us |</a></i></box>&nbsp&nbsp&nbsp
+                    <box><a name="option" style="color:white;" href="logout_bookstore_servlet?logout=ok">Logout</a></box>
+                    
                 </td>
             </tr>   
         </table>
     </form>
     <div class="topnav">
-      <box><a name="topicon" href="bookstore_home.jsp"><i class='fas fa-home' style="font-size: 25px; color: white"></i></a></box>
+      <box><a name="topicon" href="bookstore_home_user.jsp"><i class='fas fa-home' style="font-size: 25px; color: white"></i></a></box>
                   <a name="topicon" style="font-size: 20px; color: white">|</a>&nbsp
                   <a name="topicon" id="txt" style="font-size: 20px; color: white"></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         <div class="search-container">
@@ -42,7 +43,6 @@
             <button name="submit" type="submit"><i class="fa fa-search"></i></button>
           </form>
         </div>
-    </div>
     </div>
     </div>
     
@@ -95,7 +95,6 @@
     </head>
     <body onload="startTime()">
         
-     
         <div class="mainside">
           <h1 >FAQ:</h1>
           <p>question 1</p>

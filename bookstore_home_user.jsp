@@ -18,22 +18,23 @@
         <script type="text/javascript" src="./clock.js"></script>
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
         <title>BestBook_home</title>
-     <div class="position-sticky">
     <div class="head">
     <form name="head1">
         <table name="table1" width="97%">
             <tr>
-                <td><h1>&nbsp&nbsp&nbsp<i class='fas fa-book-open' style="color: white; font-size: 40px;"><a name="title" href="bookstore_home.jsp" style="font-family: Impact; color: whitesmoke;text-decoration: none; "> BookForYou </a></i></h1></td>
+                <td><h1>&nbsp&nbsp&nbsp<i class='fas fa-book-open' style="color: white; font-size: 40px;"><a name="title" href="bookstore_home_user.jsp" style="font-family: Impact; color: whitesmoke;text-decoration: none; "> BookForYou </a></i></h1></td>
                 <td align="right">
-                    <box><i name ="option" class='far fa-grin-squint'> <a name="option" href="login_signin.jsp">Log in/Join us |</a></i></box>&nbsp&nbsp&nbsp
-                    <box><i name ="option" class='far fa-question-circle'><a name="option" href="helppage.jsp"> Help |</a></i></box>&nbsp&nbsp&nbsp
-                    <box><i name ="option" class='fas fa-comment-alt'><a name="option" href="contact.jsp"> Contact us</a></i></box>
+                    <box><i name ="option" class='far fa-grin-squint'> <a name="option" href="profile_user.jsp"><%= session.getAttribute("username")%> |</a></i></box>&nbsp&nbsp&nbsp
+                    <box><i name ="option" class='far fa-question-circle'><a name="option" href="helppage_user.jsp"> Help |</a></i></box>&nbsp&nbsp&nbsp
+                    <box><i name ="option" class='fas fa-comment-alt'><a name="option" href="contact_user.jsp"> Contact us |</a></i></box>&nbsp&nbsp&nbsp
+                    <box><a name="option" style="color:white;" href="logout_bookstore_servlet?logout=ok">Logout</a></box>
+                    
                 </td>
             </tr>   
         </table>
     </form>
     <div class="topnav">
-      <box><a name="topicon" href="bookstore_home.jsp"><i class='fas fa-home' style="font-size: 25px; color: white"></i></a></box>
+      <box><a name="topicon" href="bookstore_home_user.jsp"><i class='fas fa-home' style="font-size: 25px; color: white"></i></a></box>
                   <a name="topicon" style="font-size: 20px; color: white">|</a>&nbsp
                   <a name="topicon" id="txt" style="font-size: 20px; color: white"></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         <div class="search-container">
@@ -42,7 +43,6 @@
             <button name="submit" type="submit"><i class="fa fa-search"></i></button>
           </form>
         </div>
-    </div>
     </div>
     </div>
     
@@ -81,9 +81,19 @@
 		  .sidebar {padding-top: 15px;}
 		  .sidebar a {font-size: 18px;}
 		}
-		.mainside {
+       .autoslide{
+		  height: 300px;
 		  background: whitesmoke;
 		  margin-top: 150px;
+		  margin-left: 500px;
+		  margin-right: 400px;
+		  position: relative;
+		  width: 1000px;
+		
+		}
+		.mainside {
+		  background: whitesmoke;
+		  margin-top: 30px;
 		  margin-left: 500px;
 		  margin-right: 400px;
 		  font-size: 28px; 
@@ -94,39 +104,52 @@
     </style>
     </head>
     <body onload="startTime()">
-        
      
+        <div class="sidebar">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#clients">Clients</a>
+          <a href="#contact">Contact</a>
+        </div>
+        
+        <div class="autoslide">
+          <p>Auto Slide</p>
+          <p>Auto Slide</p>
+          <p>Auto Slide</p>
+          <p>Auto Slide</p>
+          <p>Auto Slide</p>
+          <p>Auto Slide</p>
+          <p>Auto Slide</p>
+          
+        </div>
+        
         <div class="mainside">
-          <h1 >FAQ:</h1>
-          <p>question 1</p>
-          <p>answer 1 </p>
-          
-          <p>question 2</p>
-          <p>answer 2 </p>
-          
-          <p>question 3</p>
-          <p>answer 3 </p>
-          
-          <p>question 4</p>
-          <p>answer 4 </p>
-          
-          <p>question 5</p>
-          <p>answer 5 </p>
-          
-          <p>question 6</p>
-          <p>answer 6 </p>
-          
-          <p>question 7</p>
-          <p>answer 7 </p>
-          
-          <p>question 8</p>
-          <p>answer 8 </p>
-          
-          <p>question 9</p>
-          <p>answer 9 </p>
-          
-          <p>question 10</p>
-          <p>answer 10 </p>
+          <h2>Best selling</h2>
+          <p>Best selling</p>
+          <p>Best selling</p>
+          <p>Best selling</p>
+          <p>Best selling</p>
+          <p></p>
+          <hr style="background-color: black;">
+          <h2>Best in 2019</h2>
+          <p>Best in 2019</p>
+          <p>Best in 2019</p>
+          <p>Best in 2019</p>
+          <p>Best in 2019</p>
+          <p></p>
+          <hr style="background-color: black;">
+          <h2>New release</h2>
+          <p>New release</p>
+          <p>New release</p>
+          <p>New release</p>
+          <p>New release</p>
+          <p></p>
+          <hr style="background-color: black;">
+          <h2>children</h2>
+          <p>children</p>
+          <p>children</p>
+          <p>children</p>
+          <p>children</p>
           <p></p>
           <hr style="background-color: black;">
         </div>  

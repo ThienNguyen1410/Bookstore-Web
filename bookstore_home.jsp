@@ -14,8 +14,11 @@
         <meta name="description" content="The website for rent cars">
         <link rel="stylesheet" type="text/css" href="bookbackground.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <script type="text/javascript" src="./clock.js"></script>
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
         <title>BestBook_home</title>
+     <div class="position-sticky">
     <div class="head">
     <form name="head1">
         <table name="table1" width="97%">
@@ -24,30 +27,13 @@
                 <td align="right">
                     <box><i name ="option" class='far fa-grin-squint'> <a name="option" href="login_signin.jsp">Log in/Join us |</a></i></box>&nbsp&nbsp&nbsp
                     <box><i name ="option" class='far fa-question-circle'><a name="option" href="helppage.jsp"> Help |</a></i></box>&nbsp&nbsp&nbsp
-                    <box><a name="option" href="contact.jsp"><i name ="option" class='fas fa-comment-alt'> Contact us</i></a></box>
+                    <box><i name ="option" class='fas fa-comment-alt'><a name="option" href="contact.jsp"> Contact us</a></i></box>
                 </td>
             </tr>   
         </table>
     </form>
     <div class="topnav">
       <box><a name="topicon" href="bookstore_home.jsp"><i class='fas fa-home' style="font-size: 25px; color: white"></i></a></box>
-       <script>
-                            function startTime() {
-                            var today = new Date();
-                            var h = today.getHours();
-                            var m = today.getMinutes();
-                            var s = today.getSeconds();
-                            m = checkTime(m);
-                            s = checkTime(s);
-                            document.getElementById('txt').innerHTML =
-                            h + ":" + m + ":" + s;
-                            var t = setTimeout(startTime, 500);
-                          }
-                          function checkTime(i) {
-                            if (i < 10) {i = "0" + i};
-                            return i;
-                          }
-                  </script>
                   <a name="topicon" style="font-size: 20px; color: white">|</a>&nbsp
                   <a name="topicon" id="txt" style="font-size: 20px; color: white"></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         <div class="search-container">
@@ -58,9 +44,63 @@
         </div>
     </div>
     </div>
+    </div>
     
     <style>
-       
+    
+    .sidebar {
+		  height: 800px;
+		  width: 250px;
+		  position: fixed;
+		  z-index: 1;
+		  top: 150px;
+		  left: 240px;
+		  background: whitesmoke;
+		  overflow-x: hidden;
+		  padding: 8px 0;
+		}
+		
+		.sidebar a {
+		  padding: 6px 8px 6px 16px;
+		  text-decoration: none;
+		  font-size: 25px;
+		  color: #2196F3;
+		  display: block;
+		  font-family: Arial;
+		}
+		
+		.sidebar a:hover {
+		  color: red;
+		}
+		
+		
+		
+		
+		
+		@media screen and (max-height: 450px) {
+		  .sidebar {padding-top: 15px;}
+		  .sidebar a {font-size: 18px;}
+		}
+       .autoslide{
+		  height: 300px;
+		  background: whitesmoke;
+		  margin-top: 150px;
+		  margin-left: 500px;
+		  margin-right: 400px;
+		  position: relative;
+		  width: 1000px;
+		
+		}
+		.mainside {
+		  background: whitesmoke;
+		  margin-top: 30px;
+		  margin-left: 500px;
+		  margin-right: 400px;
+		  font-size: 28px; 
+		  padding: 0px 10px;
+		  position: absolute;
+		  width: 1000px;
+		}
     </style>
     </head>
     <body onload="startTime()">
