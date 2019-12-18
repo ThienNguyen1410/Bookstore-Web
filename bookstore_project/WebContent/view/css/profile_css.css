@@ -1,0 +1,131 @@
+.profileBody{
+    width:1000px;
+	height:650px;
+	background-color: none;
+	margin:auto;
+	margin-top: 150px;
+}
+
+.profileEditBody{
+	width:1000px;
+	height:850px;
+	background-color: none;
+	margin:auto;
+	margin-top: 150px;
+}
+.profileEditBody .mainside{
+	  background: whitesmoke;
+	  margin:auto;
+	  margin-top: 0px;
+	  margin-left: 260px;
+	  font-size: 28px; 
+	  padding: 0px 10px;
+	  width: 600px;
+	  height: 950px;
+	  border-radius: 12px;
+}
+.profileEditBody .mainside input[name = profile_user_name],input[name = profile_email],input[name = profile_pass]{
+	  width: 400px;
+	  padding: 12px 20px; 
+      display: inline-block; 
+      border: 1px solid #ccc; 
+      border-radius: 4px; 
+      box-sizing: border-box; 
+      font-size: 20px;
+}
+
+.profileEditBody .mainside input[name = profile_user_name_edit],input[name = profile_email_edit],input[name = profile_pass_edit]{
+		  width: 400px;
+		  padding: 12px 20px; 
+          display: inline-block; 
+          border: 1px solid #ccc; 
+          border-radius: 4px; 
+          box-sizing: border-box; 
+          font-size: 20px;
+		}
+		
+.profileEditBody .mainside input[name = profile_user_name],input[name = profile_email],input[name = profile_phone],input[name = profile_pass]{
+          border: whitesmoke; background: whitesmoke;
+}
+.profileEditBody .mainside input[name = edit_profile]{
+		  margin-left: 400px;
+		  width: 150px;
+		  background-color: lightcoral;
+		  border-radius: 12px;
+		  border-width:0;
+}	
+.profileEditBody .mainside input[name = edit_profile]:hover{
+		  color: wheat;
+          background-color: red;
+}
+
+h1{
+    font-size: 40px;
+  }
+  
+.sidebar {
+  position:fixed;
+  height: 260px;
+  width: 250px;
+  background-color: #d6d6d6;
+  padding: 8px 0;
+  float:left;
+  border-radius: 12px;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #2196F3;
+  display: block;
+  font-family: Arial;
+}
+
+.sidebar a:hover {
+  color: red;
+}
+
+.sidebar .part{
+	background-color: whitesmoke;
+	margin:auto;
+	margin-top:10px;
+	width:90%;
+	border-radius: 12px;
+}
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+.profileBody .mainside {
+  background: whitesmoke;
+  margin:auto;
+  margin-top: 150px;
+  margin-left: 260px;
+  font-size: 28px; 
+  padding: 0px 10px;
+  width: 600px;
+  height:650px; 
+  border-radius: 12px;
+}
+.profileBody .mainside input{
+  width: 400px;
+  padding: 12px 20px; 
+  display: inline-block; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  font-size: 20px;
+}
+
+.profileBody .mainside input[name = edit_profile]{
+  margin-left: 450px;
+  width: 100px;
+  background-color: lightcoral;
+  border-radius: 12px;
+  border-width:0;
+}
+.profileBody .mainside input[name = edit_profile]:hover{
+  color: wheat;
+  background-color: red;
+}

@@ -1,0 +1,670 @@
+.body_home{
+	background-color: none;
+	width:1260px;
+	margin:auto;
+	margin-top: 160px;
+}
+.sidebar {
+  height: 1490px;
+  width: 260px;
+  position: absolute;
+  background-color: #d6d6d6;
+  border-radius: 12px;
+}
+
+.sidebar h3{
+	font-weight: bold;
+}
+.sidebar .block{
+	width:95%;
+	margin:auto;
+	margin-top:10px;
+	margin-bottom:10px;
+	background-color: whitesmoke;
+	border-radius: 12px;
+	height:150px;
+}
+
+.sidebar .block img{
+    width:100%;
+    heigh:100%;
+	border-radius: 12px;
+}
+.sidebar .block .inside{
+	margin:auto;
+	margin-top:3px;
+	border-width:10px;
+	width:90%;
+}
+.sidebar .block .inside:hover{
+	width:90%;
+	background-color: #aaaaaa;
+}
+.sidebar .block a{
+	font-size:20px;
+	width:260px;
+	text-decoration: none;
+}
+
+.sidebar .block a:hover{
+	width:260px;
+	text-decoration: none;
+	
+}
+
+.sidebar .block .haflLeft{
+	background-color: whitesmoke;
+    margin:auto;
+	float:left;
+	width:50%;
+	margin-left:5px;
+}
+
+.sidebar .block .haflLeft a{
+	font-size:15px;
+}
+.sidebar .block .haflLeft a:hover{
+	text-decoration: underline;
+}
+
+.sidebar .block .haftRight{
+	background-color: whitesmoke;
+	margin:auto;
+	float:right;
+	width:40%;
+	margin-right:0px;
+}
+
+.sidebar .block .haftRight a{
+	font-size:15px;
+}
+.sidebar .block .haftRight a:hover{
+	text-decoration: underline;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+.autoslide{
+  height: 250px;
+  background-color: #e1e1e1;
+  margin:auto;
+  margin-top: 0px;
+  margin-left:270px;
+  width: 730px;
+  border-radius: 12px;
+  position: relative;
+}
+.slider1,.slider2,.slider3{
+	 height: 85%;
+     width: 95%;
+     border-radius: 20px;
+     position:absolute;
+     z-index: 0;
+     top:7.5%;
+     left:2.5%;
+}
+
+.slider1{
+	background: url(https://cdn.discordapp.com/attachments/530924784201105441/648825312716783616/11-bookstores-6-three-lives-2.w710.h473.2x.jpg)no-repeat center;
+	background-position:center;
+	background-size: cover;
+    animation:fade 5s infinite;
+    -webkit-animation:fade 5s infinite;
+}
+
+.slider2{
+	background: url(https://cdn.discordapp.com/attachments/530924784201105441/648832321948221442/41059652100_2488767b13_b.jpg)no-repeat center;
+	background-size: cover;
+	background-position:center;
+    animation:fade2 5s infinite;
+    -webkit-animation:fade2 5s infinite;
+}
+
+.slider3{
+	background: url(https://cdn.discordapp.com/attachments/530924784201105441/648832491561418772/booksss.0.jpg)no-repeat center;
+	background-size: cover;
+	background-position:center;
+    animation:fade3 5s infinite;
+    -webkit-animation:fade3 5s infinite;
+}
+
+@keyframes fade
+{
+  0%   {opacity:1}
+  33.333% { opacity: 0}
+  66.666% { opacity: 0}
+  100% { opacity: 1}
+}
+@keyframes fade2
+{
+  0%   {opacity:0}
+  33.333% { opacity: 1}
+  66.666% { opacity: 0 }
+  100% { opacity: 0}
+}
+@keyframes fade3
+{
+  0%   {opacity:0}
+  33.333% { opacity: 0}
+  66.666% { opacity: 1}
+  100% { opacity: 0}
+}
+
+.quote{
+   background-color: #0080ff;
+   margin-left:80.4%;
+   margin-top:-250px;
+   height:250px;
+   width: 250px;
+   border-radius: 12px;
+}
+
+.quote img{
+   border-radius: 12px;
+   height:90%;
+   width: 90%;
+   margin-top:5%;
+   margin-left:5%;
+}
+.mainside {
+  background: white;
+  margin:auto;
+  margin-top: -10px;
+  margin-left:270px;
+  font-size: 28px; 
+  padding: 0px 10px;
+  width: 990px;
+  border-radius: 12px;
+  height:auto;
+}
+.cointain{
+	margin-top:50px;
+}
+
+/*--------------------------------------*/
+/*--------------------------------------*/
+.bestSelling{
+	width: 100%;
+	border-style:ridge;
+	border-width:0px;
+	display: flex;
+    overflow:auto;
+    margin-top:-15px;
+}
+
+/*Book info*/
+.bestSelling .itemInfo{
+	background-color:whitesmoke;
+	border-style:ridge;
+	border-width:0px;
+	width:170px;
+	height:auto;
+	margin-left:5px;
+	margin-right:5px;
+	margin-bottom:10px;
+	float: left;
+	flex-shrink: 0;
+}
+
+/*Book image on Page */
+.bestSelling .itemInfo .itemImg input[name = imageHome]{
+	width: 120px;
+	height:150px;
+	margin-left:25px;
+	margin-top: 10px;
+}
+
+/*Book title on Page */
+.bestSelling .itemInfo .itemTitle{
+	height: 45px;
+	width:  100%;
+}
+.bestSelling .itemInfo .itemTitle p{
+	font-weight:500;
+    cursor: pointer;
+    font-size: 15px;
+    font-style:oblique;
+    margin-top:-5px;
+    margin-left:10px;
+    height: 45px;
+    overflow: hidden;
+}
+
+/*Book author on Page */
+.bestSelling .itemInfo .itemAuthor{
+	width:100%;
+	height:20px;
+    margin-top:-10px;
+}
+.bestSelling .itemInfo .itemAuthor span{
+    margin-left:10px;
+	font-size: 14px;
+	font-family:serif;
+	cursor:pointer;
+    text-decoration: none;
+}
+.bestSelling .itemInfo .itemAuthor p{
+	line-height:10px;
+	height:2px;
+	align-content: center;
+}
+.bestSelling .itemInfo .itemAuthor a{
+	line-height:10px;
+	font-size: 13px;
+	font-family:serif;
+	cursor:pointer;
+    text-decoration: none;
+}
+.bestSelling .itemInfo .itemAuthor a:hover{
+	color:orange;
+	cursor:pointer;
+    text-decoration: underline;
+}
+
+
+/*Book price on Page */
+.bestSelling .itemInfo .itemPrice {
+    margin-top:10px;
+    margin-left:0px;
+}
+.bestSelling .itemInfo .itemPrice span{
+    margin-left:20px;
+	font-size: 14px;
+	font-family:serif;
+	cursor:default;
+    text-decoration: none;
+}
+
+/*Book Add button on Page */
+.bestSelling .itemInfo .buttonAdd{
+	background-color:none;
+    margin-top: 15px;
+}
+.bestSelling .itemInfo .buttonAdd input[type = button]{
+	width: 90%;
+    margin-left:10px;
+    margin-top:-10px;
+    background-color: lightcoral;
+    font-family: Arial;
+	font-size: 15px;
+	cursor:pointer;
+	border: none;
+	padding: 10px;
+	display: inline-block;
+	text-align: center;
+	color: white;
+    text-decoration: none;
+    border-radius: 12px;
+}
+
+.bestSelling .itemInfo .buttonAdd input[type = button]:hover{
+	color: white;
+    background-color: red;
+}
+
+/*--------------------------------------*/
+/*--------------------------------------*/
+
+.best2019{
+	width: 100%;
+	border-style:ridge;
+	border-width:0px;
+	display: flex;
+    overflow:auto;
+    margin-top:-15px;
+}
+
+/*Book info*/
+.best2019 .itemInfo{
+	background-color:whitesmoke;
+	border-style:ridge;
+	border-width:0px;
+	width:170px;
+	height:auto;
+	margin-left:5px;
+	margin-right:5px;
+	margin-bottom:10px;
+	float: left;
+	flex-shrink: 0;
+}
+
+/*Book image on Page */
+.best2019 .itemInfo .itemImg input[name = imageHome]{
+	width: 120px;
+	height:150px;
+	margin-left:25px;
+	margin-top: 10px;
+}
+
+/*Book title on Page */
+.best2019 .itemInfo .itemTitle{
+	height: 45px;
+	width:  100%;
+}
+.best2019 .itemInfo .itemTitle p{
+	font-weight:500;
+    cursor: pointer;
+    font-size: 15px;
+    font-style:oblique;
+    margin-top:-5px;
+    margin-left:10px;
+    height: 45px;
+    overflow: hidden;
+}
+
+/*Book author on Page */
+.best2019 .itemInfo .itemAuthor{
+	width:100%;
+	height:20px;
+    margin-top:-10px;
+}
+.best2019 .itemInfo .itemAuthor span{
+    margin-left:10px;
+	font-size: 14px;
+	font-family:serif;
+	cursor:pointer;
+    text-decoration: none;
+}
+.best2019 .itemInfo .itemAuthor p{
+	line-height:10px;
+	height:2px;
+	align-content: center;
+}
+.best2019 .itemInfo .itemAuthor a{
+	line-height:10px;
+	font-size: 13px;
+	font-family:serif;
+	cursor:pointer;
+    text-decoration: none;
+}
+.best2019 .itemInfo .itemAuthor a:hover{
+	color:orange;
+	cursor:pointer;
+    text-decoration: underline;
+}
+
+
+/*Book price on Page */
+.best2019 .itemInfo .itemPrice {
+    margin-top:10px;
+    margin-left:0px;
+}
+.best2019 .itemInfo .itemPrice span{
+    margin-left:20px;
+	font-size: 14px;
+	font-family:serif;
+	cursor:pointer;
+    text-decoration: none;
+}
+
+/*Book Add button on Page */
+.best2019 .itemInfo .buttonAdd{
+	background-color:none;
+    margin-top: 15px;
+}
+.best2019 .itemInfo .buttonAdd input[type = button]{
+	width: 90%;
+    margin-left:10px;
+    margin-top:-10px;
+    background-color: lightcoral;
+    font-family: Arial;
+	font-size: 15px;
+	cursor:pointer;
+	border: none;
+	padding: 10px;
+	display: inline-block;
+	text-align: center;
+	color: white;
+    text-decoration: none;
+    border-radius: 12px;
+}
+
+.best2019 .itemInfo .buttonAdd input[type = button]:hover{
+	color: white;
+    background-color: red;
+}
+
+/*--------------------------------------*/
+/*--------------------------------------*/
+.newRelease{
+	width: 100%;
+	border-style:ridge;
+	border-width:0px;
+	display: flex;
+    overflow:auto;
+    margin-top:-15px;
+}
+
+/*Book info*/
+.newRelease .itemInfo{
+	background-color:whitesmoke;
+	border-style:ridge;
+	border-width:0px;
+	width:170px;
+	height:auto;
+	margin-left:5px;
+	margin-right:5px;
+	margin-bottom:10px;
+	float: left;
+	flex-shrink: 0;
+}
+
+/*Book image on Page */
+.newRelease .itemInfo .itemImg input[name = imageHome]{
+	width: 120px;
+	height:150px;
+	margin-left:25px;
+	margin-top: 10px;
+}
+
+/*Book title on Page */
+.newRelease .itemInfo .itemTitle{
+	height: 45px;
+	width:  100%;
+}
+.newRelease .itemInfo .itemTitle p{
+	font-weight:500;
+    cursor: pointer;
+    font-size: 15px;
+    font-style:oblique;
+    margin-top:-5px;
+    margin-left:10px;
+    height: 45px;
+    overflow: hidden;
+}
+
+/*Book author on Page */
+.newRelease .itemInfo .itemAuthor{
+	width:100%;
+	height:20px;
+    margin-top:-10px;
+}
+.newRelease .itemInfo .itemAuthor span{
+    margin-left:10px;
+	font-size: 14px;
+	font-family:serif;
+	cursor:pointer;
+    text-decoration: none;
+}
+.newRelease .itemInfo .itemAuthor p{
+	line-height:10px;
+	height:2px;
+	align-content: center;
+}
+.newRelease .itemInfo .itemAuthor a{
+	line-height:10px;
+	font-size: 13px;
+	font-family:serif;
+	cursor:pointer;
+    text-decoration: none;
+}
+.newRelease .itemInfo .itemAuthor a:hover{
+	color:orange;
+	cursor:pointer;
+    text-decoration: underline;
+}
+
+
+/*Book price on Page */
+.newRelease .itemInfo .itemPrice {
+    margin-top:10px;
+    margin-left:0px;
+}
+.newRelease .itemInfo .itemPrice span{
+    margin-left:20px;
+	font-size: 14px;
+	font-family:serif;
+	cursor:pointer;
+    text-decoration: none;
+}
+
+/*Book Add button on Page */
+.newRelease .itemInfo .buttonAdd{
+	background-color:none;
+    margin-top: 15px;
+}
+.newRelease .itemInfo .buttonAdd input[type = button]{
+	width: 90%;
+    margin-left:10px;
+    margin-top:-10px;
+    background-color: lightcoral;
+    font-family: Arial;
+	font-size: 15px;
+	cursor:pointer;
+	border: none;
+	padding: 10px;
+	display: inline-block;
+	text-align: center;
+	color: white;
+    text-decoration: none;
+    border-radius: 12px;
+}
+
+.newRelease .itemInfo .buttonAdd input[type = button]:hover{
+	color: white;
+    background-color: red;
+}
+
+/*--------------------------------------*/
+/*--------------------------------------*/
+.forChildren{
+	width: 100%;
+	border-style:ridge;
+	border-width:0px;
+	display: flex;
+    overflow:auto;
+    margin-top:-15px;
+}
+
+/*Book info*/
+.forChildren .itemInfo{
+	background-color:whitesmoke;
+	border-style:ridge;
+	border-width:0px;
+	width:170px;
+	height:auto;
+	margin-left:5px;
+	margin-right:5px;
+	margin-bottom:10px;
+	float: left;
+	flex-shrink: 0;
+}
+
+/*Book image on Page */
+.forChildren .itemInfo .itemImg input[name = imageHome]{
+	width: 120px;
+	height:150px;
+	margin-left:25px;
+	margin-top: 10px;
+}
+
+/*Book title on Page */
+.forChildren .itemInfo .itemTitle{
+	height: 45px;
+	width:  100%;
+}
+.forChildren .itemInfo .itemTitle p{
+	font-weight:500;
+    cursor: pointer;
+    font-size: 15px;
+    font-style:oblique;
+    margin-top:-5px;
+    margin-left:10px;
+    height: 45px;
+    overflow: hidden;
+}
+
+/*Book author on Page */
+.forChildren .itemInfo .itemAuthor{
+	width:100%;
+	height:20px;
+    margin-top:-10px;
+}
+.forChildren .itemInfo .itemAuthor span{
+    margin-left:10px;
+	font-size: 14px;
+	font-family:serif;
+	cursor:pointer;
+    text-decoration: none;
+}
+.forChildren .itemInfo .itemAuthor p{
+	line-height:10px;
+	height:2px;
+	align-content: center;
+}
+.forChildren .itemInfo .itemAuthor a{
+	line-height:10px;
+	font-size: 13px;
+	font-family:serif;
+	cursor:pointer;
+    text-decoration: none;
+}
+.forChildren .itemInfo .itemAuthor a:hover{
+	color:orange;
+	cursor:pointer;
+    text-decoration: underline;
+}
+
+
+/*Book price on Page */
+.forChildren .itemInfo .itemPrice {
+    margin-top:10px;
+    margin-left:0px;
+}
+.forChildren .itemInfo .itemPrice span{
+    margin-left:20px;
+	font-size: 14px;
+	font-family:serif;
+	cursor:pointer;
+    text-decoration: none;
+}
+
+/*Book Add button on Page */
+.forChildren .itemInfo .buttonAdd{
+	background-color:none;
+    margin-top: 15px;
+}
+.forChildren .itemInfo .buttonAdd input[type = button]{
+	width: 90%;
+    margin-left:10px;
+    margin-top:-10px;
+    background-color: lightcoral;
+    font-family: Arial;
+	font-size: 15px;
+	cursor:pointer;
+	border: none;
+	padding: 10px;
+	display: inline-block;
+	text-align: center;
+	color: white;
+    text-decoration: none;
+    border-radius: 12px;
+}
+
+.forChildren .itemInfo .buttonAdd input[type = button]:hover{
+	color: white;
+    background-color: red;
+}

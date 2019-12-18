@@ -1,0 +1,20 @@
+.mainside {
+  background: whitesmoke;
+  margin:auto;
+  margin-top: 150px;;
+  font-size: 28px; 
+  padding: 0px 10px;
+  width: 1100px;
+  border-radius: 12px;
+  height:1000px;
+  overflow: auto;
+};
+
+#wish td{
+	border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#wish tr:nth-child(even) {
+	background-color: #f2f2f2;
+}

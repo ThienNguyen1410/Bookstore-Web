@@ -1,0 +1,225 @@
+.head{
+	background-color: #8a092d;
+    width: 100%; 
+    top: 0;
+    position: fixed;
+    z-index: 3;
+    height:60px;
+}
+form[name = head1]{
+    
+        }
+
+body{
+     background: url("https://images.pexels.com/photos/163848/road-mountains-sunset-path-163848.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: 100%;
+     background-attachment: fixed;
+     background-size: cover;}
+
+box:hover {
+  opacity: 10;
+  color: #CD5C5C;
+}
+.head1{
+    width: 1500px;   
+    height: 60px; 
+    margin:auto;
+    margin-top:0;
+}
+.webName{
+	margin: auto;
+	margin-top:10px;
+	margin-left:50px;
+	float:left;
+}
+.services{
+	margin-top:17px;
+	margin-right:20px;
+	float:right;
+}
+
+.services i[id = option]{
+    font-size: 20px;
+    color: white;
+}
+
+
+.head2{
+	width:100%;
+	background-color: lightcoral;
+	height: 40px;
+}
+
+
+.topnav {
+  width: 1500px;
+  margin:auto;
+}
+
+.more_service a{
+	
+	float: left;
+	margin:auto;
+	margin-top:5px;
+	margin-left: 20px;
+	text-decoration: none;
+}
+
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[name=search] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 10px;
+  border: none;
+  width: 400px;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: red;
+}
+
+@media screen and (max-width: 100%) {
+  .topnav .search-container {
+  width:auto;
+    float: none;
+  }
+  .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+
+.downnav_width{
+	width:100%;
+	background: #e6e6e6;
+	height:40px;
+}
+.downnav{
+	margin:auto;
+	width: 1500px;
+	height:40px;
+}
+
+.downnav .rightPart_downNav{
+	margin:auto;
+	margin-left: -270px;
+	float:left;
+}
+.downnav .rightPart{
+	list-style: none;
+	font-size:15px;
+	font-family: sans-serif;
+    float: left;
+    width: 100%;
+    position: relative;
+    top: -10px;
+    left: 440px;
+    z-index: 3;
+}
+.downnav .rightPart a{
+	display: block;
+    padding: 2px;
+    background-color: #e6e6e6;
+    text-decoration: none;
+}
+
+.downnav .rightPart a:hover{
+	background-color: lightgray;
+	text-decoration: underline;
+}
+.downnav .rightPart li{
+	float: left;
+    margin-right: 10px;
+    position: relative;
+}
+
+.downnav .rightPart li.categoryDropdown ul{
+	background-color: #e6e6e6;
+    background: rgba(255,255,255,0);
+    list-style: none;
+    position: absolute;
+    left: -9999px;
+}
+.downnav .rightPart li.categoryDropdown ul li{
+	padding-top: 1px;
+    float: none;
+    margin-top: -5px;
+}
+.downnav .rightPart li.categoryDropdown ul a{
+	white-space: nowrap;
+}
+
+.downnav .rightPart li:hover ul{
+	left:-40px;
+    top: 30px;
+}
+
+.downnav .rightPart li:hover a{
+	background-color: lightgrey;
+    text-decoration: underline;
+}
+
+.downnav .rightPart li:hover ul a{
+	text-decoration: none;
+}
+.downnav .rightPart li:hover ul li a:hover{
+	background-color: lightcoral;
+	text-decoration: underline;
+}
+
+
+.downnav .leftPart{
+	list-style: none;
+	font-size:15px;
+	font-family: sans-serif;
+    float: right;
+    width: 100%;
+    position: relative;
+    top: -65px;
+    left: 1300px;
+    z-index: 3;
+}
+
+.downnav .leftPart li{
+	float: left;
+    margin-right: 10px;
+    position: relative;
+}
+
+.downnav .leftPart a{
+	display: block;
+    padding: 2px;
+    background-color: #e6e6e6;
+    text-decoration: none;
+}
+.downnav .leftPart a:hover{
+    background-color: lightgray;
+	text-decoration: underline;
+}
+hr{
+    background-color: black;
+}

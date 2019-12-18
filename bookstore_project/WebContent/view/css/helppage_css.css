@@ -1,0 +1,10 @@
+ 
+.mainside {
+  background: whitesmoke;
+  margin:auto;
+  margin-top: 150px;;
+  font-size: 28px; 
+  padding: 0px 10px;
+  width: 1000px;
+  border-radius: 12px;
+}

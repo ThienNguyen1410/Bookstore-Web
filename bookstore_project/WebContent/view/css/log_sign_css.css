@@ -1,0 +1,124 @@
+    
+.mainsidelog{
+    width: 1100px;
+    height: 600px;
+    background: whitesmoke;
+    margin: auto;
+    margin-top: 120px;
+    border-radius: 12px;
+  }
+.mainsidelog .log{
+    position: relative;
+     margin-left: -110px;
+     margin-top:-20px;
+}
+.mainsidelog .log input[name = log_form_user], input[name = log_form_pass]{
+    width: 410px; 
+    padding: 12px 20px; 
+    display: inline-block; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    font-size: 20px; 
+    margin-left: 150px;
+}
+.mainsidelog .log input[name = remem_pass]{
+    margin-top: 15px; 
+    margin-left: 150px;
+}
+.mainsidelog .log input[name = show_pass]{
+    margin-top: 15px; 
+    margin-left: 150px;
+}
+.mainsidelog .log input[name = login]{
+    font-size: 25px;
+    margin-top: 20px; 
+    margin-left: 150px; 
+    width: 410px; 
+    background-color: lightcoral;
+    border-radius: 12px;
+    border-width: 0;
+}
+.mainsidelog .log input[name = login]:hover{
+    color: wheat;
+    background-color: red;
+}
+.mainsidelog .reg{
+    position: relative;
+    margin-left: 150px;
+
+}
+.mainsidelog .reg input[name = reg_form_usern], .mainsidelog .reg input[name = reg_form_mail], .mainsidelog .reg input[name = reg_form_pass], .mainsidelog .reg input[name = reg_form_ret_pass]{
+    width: 410px; 
+    padding: 12px 20px; 
+    display: inline-block; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    font-size: 15px; 
+    margin-right: 150px;
+    margin-bottom:-10px;
+}
+.mainsidelog .reg input[name = agree]{
+    margin-top: 15px; 
+    margin-left:-240px;
+}
+.mainsidelog .reg input[name = show_pass_reg]{
+    margin-top: -20px; 
+    margin-left:-410px;
+}
+.mainsidelog .reg input[name = register]{
+    font-size: 25px;
+    margin-top: 20px; 
+    margin-left:-150px; 
+    width: 400px; 
+    background-color: lightcoral;
+    border-width:0;
+    border-radius: 12px;
+}
+.mainsidelog .reg input[name = register]:hover{
+    color: wheat;
+    background-color: red;
+}
+
+.mainsidelog a[id = icon_fb], .mainsidelog a[id = icon_ins], .mainsidelog a[id = icon_twi]{
+    font-size: 20px;
+}
+.mainsidelog a[id = icon_fb]{
+    margin-left: 480px;
+    margin-top: -10px;
+    margin-bottom: 20px;    
+}
+.mainsidelog a[id = icon_ins]{
+    margin-left: 20px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+.mainsidelog a[id = icon_twi]{
+    margin-left: 20px;
+    margin-top: -10px;
+    margin-bottom: 50px;
+}
+.mainsidelog a[id = icon_fb]:hover{
+    color: blue;
+}
+.mainsidelog a[id = icon_ins]:hover{
+    color: orange;
+}
+.mainsidelog a[id = icon_twi]:hover{
+    color: lightblue;
+}
+.mainsidelog h4{
+    margin:auto;
+    margin-left: 450px;
+    margin-bottom: -10px;
+}
+hr.style-one {
+margin-top:-30px;
+border: 0;
+height: 2px;
+background: black;
+background-color: black;
+color: black;
+
+}

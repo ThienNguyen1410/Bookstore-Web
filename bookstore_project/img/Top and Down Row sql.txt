@@ -1,0 +1,3 @@
+select * from Book order by BID desc LIMIT 5;
+
+select * from Book LIMIT 5;

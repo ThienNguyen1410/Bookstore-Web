@@ -1,0 +1,169 @@
+.body_contact{
+	width:1000px;
+	height:1095px;
+	background-color: none;
+	margin:auto;
+	margin-top: 150px;
+}
+
+.mainsidecontact{
+  width: 650px;
+  height: auto;
+  background: whitesmoke;
+  margin:auto;
+  margin-left:270px;
+  margin-top: 0px;
+  float:left;
+  border-radius: 12px;
+}
+
+.mainsidecontact .contact_form{
+    width: 650px;
+    height: auto;
+    margin-left:0;
+}
+.mainsidecontact .contact_form h1{
+    font-size: 40px;
+    margin-left: 10px;
+    margin-bottom: -30px;
+    position: static;
+}
+
+.mainsidecontact .contact_form label{
+    font-size: 17px;
+    margin-left: 10px;
+    position: relative;
+}
+.mainsidecontact .contact_form input[name = contact_form]{
+    width: 600px; 
+    padding: 12px 20px; 
+    display: inline-block; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    font-size: 20px; 
+    margin-left: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.mainsidecontact .contact_form select[name = contact_form]{
+    width: 600px; 
+    padding: 12px 20px; 
+    display: inline-block; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    font-size: 20px; 
+    margin-left: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.mainsidecontact .contact_form textarea[name = contactMessage]{
+    width: 600px; 
+    padding: 12px 20px; 
+    display: inline-block; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-left: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.mainsidecontact .contact_form input[name = send_mess]{
+    width: 150px; 
+    padding: 12px 20px; 
+    display: inline-block; 
+    border-width: 0px; 
+    border-radius: 12px; 
+    box-sizing: border-box; 
+    font-size: 20px; 
+    margin-left: 470px;
+    margin-bottom: 10px;
+    background-color: lightcoral;
+    position: relative;
+}
+.mainsidecontact .contact_form input[name = send_mess]:hover{
+    color: wheat;
+    background-color: red;
+}
+.mainsidecontact .contact_form a[id = icon_fb], .mainsidecontact .contact_form a[id = icon_ins], .mainsidecontact .contact_form a[id = icon_twi]{
+    font-size: 20px;
+    position: relative;
+}
+.mainsidecontact .contact_form a[id = icon_fb]{
+    margin-left: 270px;
+    margin-top: -10px;
+    margin-bottom: 20px;    
+    position: relative;
+}
+.mainsidecontact .contact_form a[id = icon_ins]{
+    margin-left: 20px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.mainsidecontact .contact_form a[id = icon_twi]{
+    margin-left: 20px;
+    margin-top: -10px;
+    margin-bottom: 50px;
+    position: relative;
+}
+.mainsidecontact .contact_form a[id = icon_fb]:hover{
+    color: blue;
+}
+.mainsidecontact .contact_form a[id = icon_ins]:hover{
+    color: orange;
+}
+.mainsidecontact .contact_form a[id = icon_twi]:hover{
+    color: lightblue;
+}
+.mainsidecontact .contact_form h4{
+    margin-left: 240px;
+    margin-bottom: -10px;
+    position: relative;
+}
+hr.style-one {
+border: 0;
+height: 2px;
+background: black;
+background-color: black;
+color: black;
+
+}
+.sidebar_contact {
+  position:fixed;
+  height: 260px;
+  width: 250px;
+  background-color: #d6d6d6;
+  padding: 8px 0;
+  float:left;
+  border-radius: 12px;
+}
+
+.sidebar_contact a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #2196F3;
+  display: block;
+  font-family: Arial;
+}
+
+.sidebar_contact a:hover {
+  color: red;
+}
+
+.sidebar_contact .part{
+	background-color: whitesmoke;
+	margin:auto;
+	margin-top:10px;
+	width:90%;
+	border-radius: 12px;
+}
+@media screen and (max-height: 450px) {
+  .sidebar_contact {padding-top: 15px;}
+  .sidebar_contact a {font-size: 18px;}
+  .mainsidecontact .contact_form{}
+  
+}
