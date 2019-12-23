@@ -9,11 +9,11 @@ import java.sql.SQLException;
 import models.Book;
 import models.ConnectionSqlite;
 
-public class CartDao {
+public class CategoryDao {
     public static ArrayList<Book> listBooks = new ArrayList<>();
     public static ArrayList<Book> cartBooks = new ArrayList<>();
     
-    public CartDao() {
+    public CategoryDao() {
     	String sql = "Select * From Book";
 		 listBooks = new ArrayList<>();
 			try {
@@ -232,93 +232,6 @@ public class CartDao {
 		return listBooks;
 	}
 	
-	public void createCIDforDB(String UserName) {
-		
-		String sql = "insert into Cart (CID) values ('"+UserName+"')";
-		try {
-			new ConnectionSqlite().excuteSql(sql);
-		} catch ( SQLException se ) {
-            System.out.println("SQL Exception:" + se.getMessage() );
-         }
-         catch ( Exception e ) {
-             System.out.println("Exception:" + e.getMessage() );
-          }
-	}
 	
-	public void insertCart (int UID, String CID, String BID) {
-		String sql = "Insert into UserCartBook (UID, CID, BID, Quantity) values ("+UID+",'"+CID+"','"+BID+"',1)";
-		try {
-			new ConnectionSqlite().excuteSql(sql);;	
-		} catch ( SQLException se ) {
-            System.out.println("SQL Exception:" + se.getMessage() );
-         }
-         catch ( Exception e ) {
-             System.out.println("Exception:" + e.getMessage() );
-          }
-	}
-
-	public ArrayList<Book> cartShow(String UserName){
-		 String sql = "Select Book.Image, Book.Btitle, Book.Bprice, UserCartBook.Quantity, Book.BID From Book, Cart, UserCartBook Where Book.BID = UserCartBook.BID AND Cart.CID='"+UserName+"' AND Cart.CID = UserCartBook.CID ";
-		 listBooks = new ArrayList<>();
-			try {
-				ResultSet rs = new ConnectionSqlite().choseData(sql);
-				 
-				while(rs.next()){
-					Book book = new Book();
-					book.setImage(rs.getString(1));
-					book.setBtitle(rs.getString(2));
-					book.setBprice(rs.getDouble(3)*rs.getInt(4));
-					book.setQuantity(rs.getInt(4));
-					book.setBID(rs.getString(5));
-					listBooks.add(book);	
-				}
-				rs.close();
-			} catch ( SQLException se ) {
-	            System.out.println("SQL Exception:" + se.getMessage() );
-	         }
-	         catch ( Exception e ) {
-	             System.out.println("Exception:" + e.getMessage() );
-	          }
-		
-		return listBooks;
-	}
-	
-	public boolean updateQuan(int Quan, String itemID, String Cid) {
-		String sql = "Update UserCartBook set Quantity ="+Quan+" Where BID ='"+itemID+"' AND CID ='"+Cid+"'";
-		try {
-			new ConnectionSqlite().update(sql);
-           return true;	
-		} catch ( SQLException se ) {
-            System.out.println("SQL Exception:" + se.getMessage() );
-         }
-         catch ( Exception e ) {
-             System.out.println("Exception:" + e.getMessage() );
-          }
-		return false;
-	}
-	
-	public void quantityZero(String itemID, String Cid) {
-		String sql = "Delete From UserCartBook Where BID ='"+itemID+"' AND CID ='"+Cid+"'";
-		try {
-			new ConnectionSqlite().update(sql);
-		} catch ( SQLException se ) {
-            System.out.println("SQL Exception:" + se.getMessage() );
-         }
-         catch ( Exception e ) {
-             System.out.println("Exception:" + e.getMessage() );
-          }
-	}
-	
-	public void deleteAllCart(String Cid) {
-		String sql = "Delete From UserCartBook Where CID ='"+Cid+"'";
-		try {
-			new ConnectionSqlite().update(sql);
-		} catch ( SQLException se ) {
-            System.out.println("SQL Exception:" + se.getMessage() );
-         }
-         catch ( Exception e ) {
-             System.out.println("Exception:" + e.getMessage() );
-          }
-	}
 	
 }
