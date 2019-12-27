@@ -18,7 +18,7 @@ public class WishListDao {
 	}
     
     public ArrayList<Book> viewWishList(String UserName){
-    	String sql = "Select WishList.BID, Image, Btitle, Bprice From WishList, Book Where UserName = '"+UserName+"' AND WishList.BID = Book.BID";
+    	String sql = "Select WishList.BID, Image, Btitle, Bprice, Quantity, Sale From WishList, Book Where UserName = '"+UserName+"' AND WishList.BID = Book.BID";
     	wishBooks = new ArrayList<>();
     	try {
 			ResultSet rs = new ConnectionSqlite().choseData(sql);
@@ -28,7 +28,10 @@ public class WishListDao {
 				book.setBID(rs.getString(1));
 				book.setImage(rs.getString(2));
 				book.setBtitle(rs.getString(3));
-				book.setBprice(rs.getDouble(4));
+				book.setBprice(rs.getInt(4));
+				book.setQuantity(rs.getInt(5));
+				book.setSaleOffPercent(rs.getInt(6));
+				book.setSaleOffPrice(book.getBprice()-((book.getBprice()*book.getSaleOffPercent())/100));
 				wishBooks.add(book);
 			}
 		rs.close(); 

@@ -70,8 +70,6 @@
 		           <a class="categoryName" href="#"><b>Category | </b></a>
 		           <ul>
 		             <li><a href="Art_Photography.jsp">Art, Photography</a></li>
-		             <li><a href="bestSeller.jsp">Best seller</a></li>
-		             <li><a href="best2019.jsp">Best in 2019</a></li>
 		             <li><a href="forChildren.jsp">Children books</a></li>
 		             <li><a href="Life-style_Self-help.jsp">Life-style/Self-help</a></li>
 		             <li><a href="Novels.jsp">Novels</a></li>
@@ -83,7 +81,7 @@
 		      </ul>
 		      
 		      <ul class="leftPart">
-		           <li class="wishlist_link"><a href="login_signin.jsp"><b>Wishlist | </b></a></li>
+		           <li class="wishlist_link"><a href="login_signin.jsp" style="margin-top:-5px;"><b><span style="font-size: 20px;">&#9825;</span> Wishlist | </b></a></li>
 		           <li class="cart_link"><a href="login_signin.jsp"><i class="fa fa-shopping-cart"></i><b>Cart |</b></a></li>
 		       </ul>
 		     </div>
@@ -153,7 +151,7 @@
              
           <div class="bestSelling">      
           
-             <%CartDao cart = new CartDao(); 
+             <%CartDao cart = new CartDao();
                for (Book book : cart.showBooks_bestSeller()){
              %>
              <form action="${pageContext.request.contextPath}/BookPage" method="get">
@@ -169,16 +167,36 @@
                 </div>
                 
                 <div class="itemAuthor">
-                   <p><span><b>Author:</b></span> <a id="author" href="author_<%=book.getBauthor()%>.jsp"><%=book.getBauthor()%></a></p>
+                   <p><span><b>Author:</b></span> <a id="author" href="${pageContext.request.contextPath}/Author?Bauthor=<%=book.getBauthor()%>"><%=book.getBauthor()%></a></p>
                 </div>
-                
+                <%if (book.getQuantity() > 0){ %>
+                  <%if(book.getSaleOffPercent()>0){ %>
                 <div class="itemPrice">
-                  <span style="color: #00BFFF; font-size:17px;"><b><%= book.getBprice() %> VND</b></span>
+                  <p style="font-size:17px; ">Remain:<%=book.getQuantity() %></p><br>
+                  <p style="font-size:12px; color: purple;margin-top: -50px;">Sale <%=book.getSaleOffPercent() %>%</p><br>
+                  <p style="color: #00BFFF; font-size:17px;margin-top: -50px;"><b><%=book.getSaleOffPrice() %> VND</b></p><br>
+                  <p style="font-size:10px; text-decoration: line-through; margin-top: -50px; margin-bottom: -50px;"><%=book.getBprice() %> VND</p><br>
                 </div>
                 
                 <div class="buttonAdd">
                   <a href="login_signin.jsp"><input type="button" name="buttonAdd" value="Add to cart"></a>
                 </div>
+                   <%}else{ %>
+                      <div class="itemPrice">
+		                  <p style="font-size:17px;">Remain:<%=book.getQuantity() %></p><br>
+		                  <p style="color: #00BFFF; font-size:17px; margin-top: -30px;margin-bottom: 30px "><b><%=book.getBprice() %> VND</b></p>
+		                </div>
+		                
+		                <div class="buttonAdd">
+		                  <a href="login_signin.jsp"><input type="button" name="buttonAdd" value="Add to cart"></a>
+		                </div>
+                   <%} %>
+                <%}else{ %>
+                  <div class="itemPrice">
+                  <p style="font-size:17px; margin-bottom: -20px; margin-top:20px;"><b>Out of stock</b></p><br>
+                </div>
+                <%} %>
+                
                 
               </div>
             </form>
@@ -223,16 +241,36 @@
                 
                 <div class="itemAuthor">
                    <input type ="hidden" name="ItemAuthor" value="<%=book.getBauthor()%>">
-                   <p><span><b>Author:</b></span> <a id="author" href="author_<%=book.getBauthor()%>.jsp"><%=book.getBauthor()%></a></p>
+                   <p><span><b>Author:</b></span> <a id="author" href="${pageContext.request.contextPath}/Author?Bauthor=<%=book.getBauthor()%>"><%=book.getBauthor()%></a></p>
                 </div>
                 
+                <%if (book.getQuantity() > 0){ %>
+                <%if(book.getSaleOffPercent()>0){ %>
                 <div class="itemPrice">
-                  <span style="color: #00BFFF; font-size:17px;"><b><%= book.getBprice() %> VND</b></span>
+                  <p style="font-size:17px; ">Remain:<%=book.getQuantity() %></p><br>
+                  <p style="font-size:12px; color: purple;margin-top: -50px;">Sale <%=book.getSaleOffPercent() %>%</p><br>
+                  <p style="color: #00BFFF; font-size:17px;margin-top: -50px;"><b><%=book.getSaleOffPrice() %> VND</b></p><br>
+                  <p style="font-size:10px; text-decoration: line-through; margin-top: -50px; margin-bottom: -50px;"><%=book.getBprice() %> VND</p><br>
                 </div>
                 
                 <div class="buttonAdd">
                   <a href="login_signin.jsp"><input type="button" name="buttonAdd" value="Add to cart"></a>
                 </div>
+                   <%}else{ %>
+                      <div class="itemPrice">
+		                  <p style="font-size:17px;">Remain:<%=book.getQuantity() %></p><br>
+		                  <p style="color: #00BFFF; font-size:17px; margin-top: -30px;margin-bottom: 30px "><b><%=book.getBprice() %> VND</b></p>
+		                </div>
+		                
+		                <div class="buttonAdd">
+		                  <a href="login_signin.jsp"><input type="button" name="buttonAdd" value="Add to cart"></a>
+		                </div>
+                   <%} %>
+                <%}else{ %>
+                  <div class="itemPrice">
+                  <span style="font-size:17px; margin-bottom: -20px; margin-top:20px;"><b>Out of stock</b></span><br>
+                </div>
+                <%} %>
                 
               </div>
             </form>
@@ -276,16 +314,36 @@
                 
                 <div class="itemAuthor">
                    <input type ="hidden" name="ItemAuthor" value="<%=book.getBauthor()%>">
-                   <p><span><b>Author:</b></span> <a id="author" href="author_<%=book.getBauthor()%>.jsp"><%=book.getBauthor()%></a></p>
+                   <p><span><b>Author:</b></span> <a id="author" href="${pageContext.request.contextPath}/Author?Bauthor=<%=book.getBauthor()%>"><%=book.getBauthor()%></a></p>
                 </div>
                 
+                <%if (book.getQuantity() > 0){ %>
+                <%if(book.getSaleOffPercent()>0){ %>
                 <div class="itemPrice">
-                  <span style="color: #00BFFF; font-size:17px;"><b><%= book.getBprice() %> VND</b></span>
+                  <p style="font-size:17px; ">Remain:<%=book.getQuantity() %></p><br>
+                  <p style="font-size:12px; color: purple;margin-top: -50px;">Sale <%=book.getSaleOffPercent() %>%</p><br>
+                  <p style="color: #00BFFF; font-size:17px;margin-top: -50px;"><b><%=book.getSaleOffPrice() %> VND</b></p><br>
+                  <p style="font-size:10px; text-decoration: line-through; margin-top: -50px; margin-bottom: -50px;"><%=book.getBprice() %> VND</p><br>
                 </div>
                 
                 <div class="buttonAdd">
                   <a href="login_signin.jsp"><input type="button" name="buttonAdd" value="Add to cart"></a>
                 </div>
+                   <%}else{ %>
+                      <div class="itemPrice">
+		                  <p style="font-size:17px;">Remain:<%=book.getQuantity() %></p><br>
+		                  <p style="color: #00BFFF; font-size:17px; margin-top: -30px;margin-bottom: 30px "><b><%=book.getBprice() %> VND</b></p>
+		                </div>
+		                
+		                <div class="buttonAdd">
+		                  <a href="login_signin.jsp"><input type="button" name="buttonAdd" value="Add to cart"></a>
+		                </div>
+                   <%} %>
+                <%}else{ %>
+                  <div class="itemPrice">
+                  <span style="font-size:17px; margin-bottom: -20px; margin-top:20px;"><b>Out of stock</b></span><br>
+                </div>
+                <%} %>
                 
               </div>
             </form>
@@ -329,16 +387,36 @@
                 
                 <div class="itemAuthor">
                    <input type ="hidden" name="ItemAuthor" value="<%=book.getBauthor()%>">
-                   <p><span><b>Author:</b></span> <a id="author" href="author_<%=book.getBauthor()%>.jsp"><%=book.getBauthor()%></a></p>
+                   <p><span><b>Author:</b></span> <a id="author" href="${pageContext.request.contextPath}/Author?Bauthor=<%=book.getBauthor()%>"><%=book.getBauthor()%></a></p>
                 </div>
                 
+                <%if (book.getQuantity() > 0){ %>
+                <%if(book.getSaleOffPercent()>0){ %>
                 <div class="itemPrice">
-                  <span style="color: #00BFFF; font-size:17px;"><b><%= book.getBprice() %> VND</b></span>
+                  <p style="font-size:17px; ">Remain:<%=book.getQuantity() %></p><br>
+                  <p style="font-size:12px; color: purple;margin-top: -50px;">Sale <%=book.getSaleOffPercent() %>%</p><br>
+                  <p style="color: #00BFFF; font-size:17px;margin-top: -50px;"><b><%=book.getSaleOffPrice() %> VND</b></p><br>
+                  <p style="font-size:10px; text-decoration: line-through; margin-top: -50px; margin-bottom: -50px;"><%=book.getBprice() %> VND</p><br>
                 </div>
                 
                 <div class="buttonAdd">
                   <a href="login_signin.jsp"><input type="button" name="buttonAdd" value="Add to cart"></a>
                 </div>
+                   <%}else{ %>
+                      <div class="itemPrice">
+		                  <p style="font-size:17px;">Remain:<%=book.getQuantity() %></p><br>
+		                  <p style="color: #00BFFF; font-size:17px; margin-top: -30px;margin-bottom: 30px "><b><%=book.getBprice() %> VND</b></p>
+		                </div>
+		                
+		                <div class="buttonAdd">
+		                  <a href="login_signin.jsp"><input type="button" name="buttonAdd" value="Add to cart"></a>
+		                </div>
+                   <%} %>
+                <%}else{ %>
+                  <div class="itemPrice">
+                  <span style="font-size:17px; margin-bottom: -20px; margin-top:20px;"><b>Out of stock</b></span><br>
+                </div>
+                <%} %>
                 
               </div>
             </form>
@@ -360,6 +438,39 @@
         </div>  
         </div>
        </div>
+       
+      <div class="footer">
+        <div class="center">
+          <h2>----------Follow us----------</h2><br>
+                <a id="icon_fb" href="https://www.facebook.com/" ><i class='fab fa-facebook-f fa-2x'></i></a>
+                <a id="icon_ins" href="https://www.instagram.com/"><i class='fab fa-instagram fa-2x'></i></a>
+                <a id="icon_twi" href="https://twitter.com/"><i class='fab fa-twitter fa-2x'></i></a>
+                <a id="icon_yt" href="https://youtube.com/"><i class='fab fa-youtube fa-2x'></i></a>
+         </div>
+         
+         <div class="bottom">
+	        <div class="Explore">
+	          <h1>Explore</h1>
+	          <a href="bookstore_home.jsp">About Us</a>
+	          <a href="login_signin.jsp">Sign Up-Log In</a>
+	        </div>
+	        
+	         <div class="Support">
+	          <h1>Support</h1>
+	          	 <a href="term.jsp">Our Policy and Term</a>
+	             <a href="contact.jsp">Contact</a>
+	        </div>
+        
+	       <div class="Contact" style="">
+	          <h1>Contact</h1>
+	          <p>Phone Number:809532840</p>
+	          <p>Email:HTP_CORP@gmail.com</p>
+	          <p>Address:...................</p>      
+	        </div>
+      </div>
+      
+      <div class="end"><p>Copyright 2019-2019 HTP-CORP - All Rights Reserved. </p></div>
+    </div>
        
     </body>
 </html>

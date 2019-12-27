@@ -5,6 +5,9 @@ public class Customer {
     String userName;
     String email;
     String password;
+    String fullName;
+    String address;
+    
 	public Customer(String userName, String email, String password) {
 		super();
 		this.userName = userName;
@@ -12,12 +15,14 @@ public class Customer {
 		this.password = password;
 	}
 	
-	public Customer(int UID,String userName, String email, String password) {
+	public Customer(int UID,String fullName, String address, String userName, String email, String password) {
 		super();
 		this.UID=UID;
 		this.userName = userName;
 		this.email = email;
 		this.password = password;
+		this.fullName =fullName;
+		this.address=address;
 	}
 
 	public String getUserName() {
@@ -46,6 +51,23 @@ public class Customer {
 
 	public void setUID(int uID) {
 		UID = uID;
+	}
+    
+	
+	public String getFullName() {
+		return fullName;
+	}
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	@Override

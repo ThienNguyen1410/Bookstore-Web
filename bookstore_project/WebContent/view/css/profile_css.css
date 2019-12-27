@@ -1,6 +1,6 @@
 .profileBody{
     width:1000px;
-	height:650px;
+	height:auto;
 	background-color: none;
 	margin:auto;
 	margin-top: 150px;
@@ -8,7 +8,7 @@
 
 .profileEditBody{
 	width:1000px;
-	height:850px;
+	height:auto;
 	background-color: none;
 	margin:auto;
 	margin-top: 150px;
@@ -21,10 +21,10 @@
 	  font-size: 28px; 
 	  padding: 0px 10px;
 	  width: 600px;
-	  height: 950px;
+	  height: 1450px;
 	  border-radius: 12px;
 }
-.profileEditBody .mainside input[name = profile_user_name],input[name = profile_email],input[name = profile_pass]{
+.profileEditBody .mainside input{
 	  width: 400px;
 	  padding: 12px 20px; 
       display: inline-block; 
@@ -33,19 +33,27 @@
       box-sizing: border-box; 
       font-size: 20px;
 }
-
-.profileEditBody .mainside input[name = profile_user_name_edit],input[name = profile_email_edit],input[name = profile_pass_edit]{
-		  width: 400px;
-		  padding: 12px 20px; 
-          display: inline-block; 
-          border: 1px solid #ccc; 
-          border-radius: 4px; 
-          box-sizing: border-box; 
-          font-size: 20px;
-		}
 		
 .profileEditBody .mainside input[name = profile_user_name],input[name = profile_email],input[name = profile_phone],input[name = profile_pass]{
           border: whitesmoke; background: whitesmoke;
+}
+
+.profileEditBody .mainside input[type=checkbox]{
+          margin-left:40px;
+          width:20px;
+          height:20px;
+          border-radius: 8px;
+          cursor: pointer;
+}
+.profileEditBody .mainside input[type=checkbox]:hover{
+          background-color: lightcoral;
+}
+.profileEditBody .mainside p[id = show_pass_edit ]{
+	  width:100%;
+	  margin-left:70px;
+	  margin-top: -36px;
+	  font-size: 20px;
+	  font-family: monospace;
 }
 .profileEditBody .mainside input[name = edit_profile]{
 		  margin-left: 400px;
@@ -58,6 +66,7 @@
 		  color: wheat;
           background-color: red;
 }
+
 
 h1{
     font-size: 40px;
@@ -105,7 +114,7 @@ h1{
   font-size: 28px; 
   padding: 0px 10px;
   width: 600px;
-  height:650px; 
+  height:950px; 
   border-radius: 12px;
 }
 .profileBody .mainside input{

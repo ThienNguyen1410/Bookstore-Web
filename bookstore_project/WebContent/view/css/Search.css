@@ -17,7 +17,7 @@
 	border-style:ridge;
 	border-width:1px;
 	width:170px;
-	height:inherit;
+	height:420px;
 	margin-left:20px;
 	margin-right:5px;
 	margin-bottom:10px;
@@ -86,12 +86,9 @@
     margin-top:10px;
     margin-left:0px;
 }
-.searchView .itemInfo .itemPrice span{
+.searchView .itemInfo .itemPrice p{
     margin-left:20px;
-	font-size: 14px;
-	font-family:serif;
 	cursor:default;
-    text-decoration: none;
 }
 
 /*Book Add button on Page */
@@ -99,7 +96,7 @@
 	background-color:none;
     margin-top: 15px;
 }
-.searchView .itemInfo .buttonAdd input[type = button]{
+.searchView .itemInfo .buttonAdd input[type = button], input[type = submit]{
 	width: 90%;
     margin-left:10px;
     margin-top:-10px;

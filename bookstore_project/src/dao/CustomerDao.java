@@ -21,15 +21,17 @@ public class CustomerDao implements ObjectDao{
 	}
 	
 	public Customer infoTake(String email, String password) {
-		String query = "select UID, UserName, Email, UPass from User where Email ='"+ email +"' AND UPass = '"+ password +"'";
+		String query = "select * from User where Email ='"+ email +"' AND UPass = '"+ password +"'";
 		try {
 			ResultSet rs = new ConnectionSqlite().choseData(query);
 			while(rs.next()){ 
-				int UIDtake = rs.getInt("UID");
-				String userNameTake = rs.getString("UserName");
-				String emailTake = rs.getString("Email");
-				String passTake = rs.getString("UPass");
-				return new Customer(UIDtake,userNameTake,emailTake,passTake);
+				int UIDtake = rs.getInt(1);
+				String fullNameTake = rs.getString(2);
+				String addressTake = rs.getString(3);
+				String emailTake = rs.getString(4);
+				String userNameTake = rs.getString(5);				
+				String passTake = rs.getString(6);
+				return new Customer(UIDtake,fullNameTake,addressTake,userNameTake,emailTake,passTake);
 			}
 			rs.close();
 		} catch (Exception e) {
@@ -38,7 +40,7 @@ public class CustomerDao implements ObjectDao{
 		}
 		return null;
 	}
-
+	
 	@Override
 	public boolean SignIn(String email, String password) {
 		String query = "select UID, Email, UPass from User where Email ='"+ email +"' AND UPass = '"+ password +"'";
@@ -46,6 +48,22 @@ public class CustomerDao implements ObjectDao{
 			ResultSet rs = new ConnectionSqlite().choseData(query);
 			while(rs.next()){
 				if(rs.getString("Email").equals(email) && rs.getString("UPass").equals(password)) {
+					return true;
+				}
+			}rs.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+		return false;
+	}
+	
+	public boolean SignInGoogle(String email) {
+		String query = "select Email from User where Email ='"+ email +"'";
+		try {
+			ResultSet rs = new ConnectionSqlite().choseData(query);
+			while(rs.next()){
+				if(rs.getString("Email").equals(email)) {
 					return true;
 				}
 			}rs.close();

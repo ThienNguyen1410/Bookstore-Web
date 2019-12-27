@@ -114,9 +114,8 @@
                               <form  name="change_pass_2" action="${pageContext.request.contextPath}/Pass_change" method="post">
                                   <%
                                   String email = request.getParameter("mail_re");
-                                  session.setAttribute("emailPass", email);
                                   %>                                                              
-                                  <input name="enter_email_" type="text" value="<%= session.getAttribute("emailPass")%>" readonly><br>
+                                  <input name="enter_email_" type="text" value="<% out.print(email);%>" readonly><br>
                                   <input name="enter_new_pass" id="profile_pass_edit" type="password" placeholder="Password"><br> 
                                   <input name="show_pass_reg" style="margin-left:140px; margin-top:20px;"  type="checkbox" onclick="myFunctionShowEdit()"> Show password.<br>
                                   <input name="change_pass" type="submit" value="Change password">

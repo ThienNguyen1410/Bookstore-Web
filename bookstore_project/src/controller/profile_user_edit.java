@@ -13,32 +13,16 @@ import javax.swing.JOptionPane;
 import dao.CustomerDao;
 import models.Customer;;
 
-/**
- * Servlet implementation class profile_user_edit
- */
 @WebServlet(urlPatterns ="/profile_user_edit")
 public class profile_user_edit extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public profile_user_edit() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String userProfile = request.getParameter("profile_user_name");
@@ -52,7 +36,13 @@ public class profile_user_edit extends HttpServlet {
             	if(new CustomerDao().EditUser(cus, userProfile)){
             		HttpSession session = request.getSession();
             		session.setAttribute("user", cus);
-		            JOptionPane.showMessageDialog(null,"Success change!");
+            		JOptionPane.showMessageDialog(null, "<html>"
+								                       + " <body>"
+								                       + "  <div>"
+								                       + "   <p style=\"font-size:15px; font-family:serif;\">Success change.</p>"
+								                       + "  </div>"
+								                       + " </body>"
+								                       + "</html>");
 		            response.sendRedirect("view/profile_user.jsp");
 	            }
 	          }

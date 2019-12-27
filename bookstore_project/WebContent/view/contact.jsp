@@ -66,8 +66,6 @@
 		           <a class="categoryName" href="#"><b>Category | </b></a>
 		           <ul>
 		             <li><a href="Art_Photography.jsp">Art, Photography</a></li>
-		             <li><a href="bestSeller.jsp">Best seller</a></li>
-		             <li><a href="best2019.jsp">Best in 2019</a></li>
 		             <li><a href="forChildren.jsp">Children books</a></li>
 		             <li><a href="Life-style_Self-help.jsp">Life-style/Self-help</a></li>
 		             <li><a href="Novels.jsp">Novels</a></li>
@@ -79,7 +77,7 @@
 		      </ul>
 		      
 		      <ul class="leftPart">
-		           <li class="wishlist_link"><a href="login_signin.jsp"><b>Wishlist | </b></a></li>
+		           <li class="wishlist_link"><a href="login_signin.jsp" style="margin-top:-5px;"><b><span style="font-size: 20px;">&#9825;</span> Wishlist | </b></a></li>
 		           <li class="cart_link"><a href="login_signin.jsp"><i class="fa fa-shopping-cart"></i><b>Cart |</b></a></li>
 		       </ul>
 		     </div>
@@ -97,43 +95,71 @@
         </div>
         
         <div class="mainsidecontact">
-            <form name="contact" action="#">
+            <form name="contact" action="${pageContext.request.contextPath}/contact_servlet" method="get">
                 <div class="contact_form">
                 <h1>Contact us</h1><br>
                 <i style="font-size: 15px; color: grey; margin-left: 30px">In order to contact us. Please fill the form under.</i><br>
                 <i style="font-size: 15px; color: grey; margin-left: 30px"><i style="color: red">*</i> means require to answer.</i><br><br>
                 <label>Full name <i style="color: red">*</i></label><br>
-                <input name="contact_form" type="text" required><br>
+                <input name="fullname" type="text" required><br>
                 <label>Email <i style="color: red">*</i></label><br>
-                <input name="contact_form" type="email" required><br>
+                <input name="email" type="email" required><br>
                 <label>Postcode/zip </label><br>
-                <input name="contact_form" type="text"><br>
+                <input name="postcode" type="text"><br>
                 <label>Reason <i style="color: red">*</i></label><br>
                 <select name="contact_form" required>
-                    <option value="chose">--Choose--</option>
-                    <option value="My_order">My order</option>
-                    <option value="My__pre_order">My pre-order</option>
-                    <option value="cancel_order">Cancel my order</option>
-                    <option value="damaged_item">Damaged items</option>
-                    <option value="incorrect_item">Incorrect items</option>
-                    <option value="account">My account</option>
-                    <option value="website">Website issues</option>
-                    <option value="other">Other</option>
+                    <option id="chose">--Choose--</option>
+                    <option id="My_order">My order</option>
+                    <option id="My__pre_order">My pre-order</option>
+                    <option id="cancel_order">Cancel my order</option>
+                    <option id="damaged_item">Damaged items</option>
+                    <option id="incorrect_item">Incorrect items</option>
+                    <option id="account">My account</option>
+                    <option id="website">Website issues</option>
+                    <option id="other">Other</option>
                 </select><br>
                 <label>More information <i style="color: red">*</i></label><br>
                 <textarea name="contactMessage" id="contactMessage" required rows="15"></textarea><br>
                 <input name="send_mess" type="submit" value="Send"><br>
-                <hr class="style-one">
-                <h4>-----Follow us-----</h4><br>
-                <a id="icon_fb" href="https://www.facebook.com/"><i class='fab fa-facebook-f'></i></a>
-                <a id="icon_ins" href="https://www.instagram.com/"><i class='fab fa-instagram'></i></a>
-                <a id="icon_twi" href="https://twitter.com/"><i class='fab fa-twitter'></i></a><br><br>
+               
                 </div>
             </form>
             
         </div>
         </div>
         
+        <div class="footer" style="margin-top: -130px;">
+        <div class="center">
+          <h2>----------Follow us----------</h2><br>
+                <a id="icon_fb" href="https://www.facebook.com/" ><i class='fab fa-facebook-f fa-2x'></i></a>
+                <a id="icon_ins" href="https://www.instagram.com/"><i class='fab fa-instagram fa-2x'></i></a>
+                <a id="icon_twi" href="https://twitter.com/"><i class='fab fa-twitter fa-2x'></i></a>
+                <a id="icon_yt" href="https://youtube.com/"><i class='fab fa-youtube fa-2x'></i></a>
+         </div>
+         
+         <div class="bottom">
+	        <div class="Explore">
+	          <h1>Explore</h1>
+	          <a href="bookstore_home.jsp">About Us</a>
+	          <a href="login_signin.jsp">Sign Up-Log In</a>
+	        </div>
+	        
+	         <div class="Support">
+	          <h1>Support</h1>
+	          	 <a href="term.jsp">Our Policy and Term</a>
+	             <a href="contact.jsp">Contact</a>
+	        </div>
+        
+	       <div class="Contact" style="">
+	          <h1>Contact</h1>
+	          <p>Phone Number:809532840</p>
+	          <p>Email:HTP_CORP@gmail.com</p>
+	          <p>Address:...................</p>      
+	        </div>
+      </div>
+      
+      <div class="end"><p>Copyright 2019-2019 HTP-CORP - All Rights Reserved. </p></div>
+    </div>
          
     </body>
 </html>

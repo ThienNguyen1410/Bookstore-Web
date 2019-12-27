@@ -72,8 +72,6 @@
 		           <a class="categoryName" href="#"><b>Category | </b></a>
 		           <ul>
 		             <li><a href="Art_Photography_user.jsp">Art, Photography</a></li>
-		             <li><a href="bestSeller_user.jsp">Best seller</a></li>
-		             <li><a href="best2019_user.jsp">Best in 2019</a></li>
 		             <li><a href="forChildren_user.jsp">Children books</a></li>
 		             <li><a href="Life-style_Self-help_user.jsp">Life-style/Self-help</a></li>
 		             <li><a href="Novels_user.jsp">Novels</a></li>
@@ -85,7 +83,7 @@
 		      </ul>
 		      
 		      <ul class="leftPart">
-		           <li class="wishlist_link"><a href="wishlist_user.jsp"><b>Wishlist | </b></a></li>
+		           <li class="wishlist_link"><a href="wishlist_user.jsp" style="margin-top:-5px;"><b><span style="font-size: 20px;">&#9825;</span> Wishlist | </b></a></li>
 		           <li class="cart_link"><a href="cart_user.jsp"><i class="fa fa-shopping-cart"></i><b>Cart |</b></a></li>
 		       </ul>
 		     </div>
@@ -99,12 +97,14 @@
           <%SearchDao search = new SearchDao();
            for (Book book : search.searchView(request.getParameter("search"))){
          %>
-          <form action="${pageContext.request.contextPath}/BookPageUser" method="get">
+          
 
               <div class ="itemInfo">
                 <div class = "itemImg">
+                <form action="${pageContext.request.contextPath}/BookPageUser" method="get">
                     <input type ="hidden" name="itemID" value="<%=book.getBID()%>">
                     <input type="image" name="imageHome" src="<%=book.getImage()%>" >
+                    </form>
                 </div> 
                 
                 <div class="itemTitle">
@@ -112,21 +112,87 @@
                 </div>
                 
                 <div class="itemAuthor">
-                   <p><span><b>Author:</b></span> <a id="author" href="author_<%=book.getBauthor()%>.jsp"><%=book.getBauthor()%></a></p>
+                   <p><span><b>Author:</b></span> <a id="author" href="${pageContext.request.contextPath}/AuthorUser?Bauthor=<%=book.getBauthor()%>"><%=book.getBauthor()%></a></p>
                 </div>
                 
-                <div class="itemPrice">
-                  <span style="color: #00BFFF; font-size:17px;"><b><%= book.getBprice() %> VND</b></span>
-                </div>
                 
-                <div class="buttonAdd">
-                  <a href="${pageContext.request.contextPath}/Cart_servlet?BID=<%=book.getBID()%>&UID=<%=cus.getUserName()%>"><input type="button" name="buttonAdd" value="Add to cart"></a>
+                <%if (book.getQuantity() > 0){ %>
+	                <%if(book.getSaleOffPercent()>0){ %>
+		                <div class="itemPrice">
+		                  <p style="font-size:17px; ">Remain:<%=book.getQuantity() %></p><br>
+		                  <p style="font-size:12px; color: purple;margin-top: -50px;">Sale <%=book.getSaleOffPercent() %>%</p><br>
+		                  <p style="color: #00BFFF; font-size:17px;margin-top: -50px;"><b><%=book.getSaleOffPrice() %> VND</b></p><br>
+		                  <p style="font-size:10px; text-decoration: line-through; margin-top: -50px; margin-bottom: -40px;"><%=book.getBprice() %> VND</p><br>
+		                </div>
+		                
+		                <div class="buttonAdd">
+					                <form action="${pageContext.request.contextPath}/Cart_servlet" method ="get">
+					                  <input type ="hidden" name="BID" value="<%=book.getBID()%>"> 
+					                  <input type ="hidden" name="UserName" value="<%=cus.getUserName()%>">
+					                  <input type ="hidden" name="UID" value="<%=cus.getUID()%>"> 
+					                  <input type="submit" name="buttonAdd" value="Add to cart">
+					                </form>
+					              </div>
+		                   <%}else{ %>
+		                      <div class="itemPrice">
+				                  <p style="font-size:17px;">Remain:<%=book.getQuantity() %></p><br>
+				                  <p style="color: #00BFFF; font-size:17px; margin-top: -30px;margin-bottom: 30px "><b><%=book.getBprice() %> VND</b></p>
+				                </div>
+				                
+				                <div class="buttonAdd">
+					                <form action="${pageContext.request.contextPath}/Cart_servlet" method ="get">
+					                  <input type ="hidden" name="BID" value="<%=book.getBID()%>"> 
+					                  <input type ="hidden" name="UserName" value="<%=cus.getUserName()%>">
+					                  <input type ="hidden" name="UID" value="<%=cus.getUID()%>"> 
+					                  <input type="submit" name="buttonAdd" value="Add to cart">
+					                </form>
+					              </div>
+		                   <%} %>
+                <%}else{ %>
+                  <div class="itemPrice">
+                  <span style="font-size:17px; margin-bottom: -20px; margin-top:20px;"><b>Out of stock</b></span><br>
                 </div>
+                <%} %>
+                
+                
                 
               </div>
-            </form>
+            
           <%} %>
           </div>
+ 
+      <div class="footer">
+        <div class="center">
+          <h2>----------Follow us----------</h2><br>
+                <a id="icon_fb" href="https://www.facebook.com/" ><i class='fab fa-facebook-f fa-2x'></i></a>
+                <a id="icon_ins" href="https://www.instagram.com/"><i class='fab fa-instagram fa-2x'></i></a>
+                <a id="icon_twi" href="https://twitter.com/"><i class='fab fa-twitter fa-2x'></i></a>
+                <a id="icon_yt" href="https://youtube.com/"><i class='fab fa-youtube fa-2x'></i></a>
+         </div>
+         
+         <div class="bottom">
+	        <div class="Explore">
+	          <h1>Explore</h1>
+	          <a href="#">About Us</a>
+	          <a href="profile_user.jsp">Your profile</a>
+	        </div>
+	        
+	         <div class="Support">
+	          <h1>Support</h1>
+	          	 <a href="term.jsp">Our Policy and Term</a>
+	             <a href="contact_user.jsp">Contact</a>
+	        </div>
+        
+	       <div class="Contact" style="">
+	          <h1>Contact</h1>
+	          <p>Phone Number:809532840</p>
+	          <p>Email:HTP_CORP@gmail.com</p>
+	          <p>Address:...................</p>      
+	        </div>
+      </div>
+      
+      <div class="end"><p>Copyright 2019-2019 HTP-CORP - All Rights Reserved. </p></div>
+    </div>
  
     </body>
 </html>

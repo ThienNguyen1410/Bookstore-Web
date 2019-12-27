@@ -1,9 +1,10 @@
 .bookPageBody{
 	width:1000px;
 	height:1500px;
-	background-color: blue;
+	background-color: none;
 	margin:auto;
 	margin-top: 150px;
+	margin-bottom: 50px;
 	overflow:inherit ;
 }
 .sidebar {
@@ -94,10 +95,11 @@
   margin: auto;
   margin-top: 0px;
   margin-left:270px;
+  margin-bottom: 50px;
   font-size: 28px; 
   padding: 0px 10px;
   width: 700px;
-  height: 1000px;
+  height: 1620px;
   border-radius: 12px;
 }
 
@@ -134,7 +136,7 @@
 .itemMainInfo .mainAuthor a:hover{
     text-decoration: underline;
     color: orange;
-    font-size: 25px;
+     font-size: 15px;
 }
 .itemMainInfo .mainPrice{
 	margin:auto;
@@ -175,4 +177,102 @@
 
 .itemMainInfo .addCart_bookPage input:hover{
 	background-color: #e62424;
+}
+
+.sameAuthor{
+	width: 100%;
+	border-style:ridge;
+	border-width:0px;
+	display: flex;
+    overflow:auto;
+    margin-top:-15px;
+    height:250px;
+}
+
+/*Book info*/
+.sameAuthor .itemInfo{
+	background-color:whitesmoke;
+	border-style:ridge;
+	border-width:0px;
+	width:170px;
+	height:auto;
+	margin-left:5px;
+	margin-right:5px;
+	margin-bottom:10px;
+	float: left;
+	flex-shrink: 0;
+}
+
+/*Book image on Page */
+.sameAuthor .itemInfo .itemImg input[name = imageHome]{
+	width: 120px;
+	height:150px;
+	margin-left:25px;
+	margin-top: 10px;
+}
+
+/*Book title on Page */
+.sameAuthor .itemInfo .itemTitle{
+	height: 45px;
+	width:  100%;
+}
+.sameAuthor .itemInfo .itemTitle p{
+	font-weight:500;
+    cursor: pointer;
+    font-size: 15px;
+    font-style:oblique;
+    margin-top:-5px;
+    margin-left:10px;
+    height: 45px;
+    overflow: hidden;
+}
+
+/*------------------------------------------------*/
+
+.sameCategory{
+	width: 100%;
+	border-style:ridge;
+	border-width:0px;
+	display: flex;
+    overflow:auto;
+    margin-top:-15px;
+    height:250px;
+}
+
+/*Book info*/
+.sameCategory .itemInfo{
+	background-color:whitesmoke;
+	border-style:ridge;
+	border-width:0px;
+	width:170px;
+	height:auto;
+	margin-left:5px;
+	margin-right:5px;
+	margin-bottom:10px;
+	float: left;
+	flex-shrink: 0;
+}
+
+/*Book image on Page */
+.sameCategory .itemInfo .itemImg input[name = imageHome]{
+	width: 120px;
+	height:150px;
+	margin-left:25px;
+	margin-top: 10px;
+}
+
+/*Book title on Page */
+.sameCategory .itemInfo .itemTitle{
+	height: 45px;
+	width:  100%;
+}
+.sameCategory .itemInfo .itemTitle p{
+	font-weight:500;
+    cursor: pointer;
+    font-size: 15px;
+    font-style:oblique;
+    margin-top:-5px;
+    margin-left:10px;
+    height: 45px;
+    overflow: hidden;
 }

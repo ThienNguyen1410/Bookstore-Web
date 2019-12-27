@@ -201,7 +201,7 @@
 	border-style:ridge;
 	border-width:0px;
 	width:170px;
-	height:auto;
+	height:450px;
 	margin-left:5px;
 	margin-right:5px;
 	margin-bottom:10px;
@@ -270,12 +270,9 @@
     margin-top:10px;
     margin-left:0px;
 }
-.bestSelling .itemInfo .itemPrice span{
-    margin-left:20px;
-	font-size: 14px;
-	font-family:serif;
+.bestSelling .itemInfo .itemPrice p{
+    margin-left:15px;
 	cursor:default;
-    text-decoration: none;
 }
 
 /*Book Add button on Page */
@@ -283,10 +280,10 @@
 	background-color:none;
     margin-top: 15px;
 }
-.bestSelling .itemInfo .buttonAdd input[type = button]{
+.bestSelling .itemInfo .buttonAdd input[type = button],input[type = submit]{
 	width: 90%;
     margin-left:10px;
-    margin-top:-10px;
+    margin-top:20px;
     background-color: lightcoral;
     font-family: Arial;
 	font-size: 15px;
@@ -300,7 +297,7 @@
     border-radius: 12px;
 }
 
-.bestSelling .itemInfo .buttonAdd input[type = button]:hover{
+.bestSelling .itemInfo .buttonAdd input[type = button]:hover,input[type = submit]:hover{
 	color: white;
     background-color: red;
 }
@@ -323,7 +320,7 @@
 	border-style:ridge;
 	border-width:0px;
 	width:170px;
-	height:auto;
+	height:450px;
 	margin-left:5px;
 	margin-right:5px;
 	margin-bottom:10px;
@@ -392,12 +389,9 @@
     margin-top:10px;
     margin-left:0px;
 }
-.best2019 .itemInfo .itemPrice span{
-    margin-left:20px;
-	font-size: 14px;
-	font-family:serif;
-	cursor:pointer;
-    text-decoration: none;
+.best2019 .itemInfo .itemPrice p{
+    margin-left:15px;
+	cursor:default;
 }
 
 /*Book Add button on Page */
@@ -405,10 +399,10 @@
 	background-color:none;
     margin-top: 15px;
 }
-.best2019 .itemInfo .buttonAdd input[type = button]{
+.best2019 .itemInfo .buttonAdd input[type = button],input[type = submit]{
 	width: 90%;
     margin-left:10px;
-    margin-top:-10px;
+    margin-top:20px;
     background-color: lightcoral;
     font-family: Arial;
 	font-size: 15px;
@@ -422,7 +416,7 @@
     border-radius: 12px;
 }
 
-.best2019 .itemInfo .buttonAdd input[type = button]:hover{
+.best2019 .itemInfo .buttonAdd input[type = button]:hover,input[type = submit]:hover{
 	color: white;
     background-color: red;
 }
@@ -444,7 +438,7 @@
 	border-style:ridge;
 	border-width:0px;
 	width:170px;
-	height:auto;
+	height:450px;
 	margin-left:5px;
 	margin-right:5px;
 	margin-bottom:10px;
@@ -513,12 +507,9 @@
     margin-top:10px;
     margin-left:0px;
 }
-.newRelease .itemInfo .itemPrice span{
-    margin-left:20px;
-	font-size: 14px;
-	font-family:serif;
-	cursor:pointer;
-    text-decoration: none;
+.newRelease .itemInfo .itemPrice p{
+    margin-left:15px;
+	cursor:default;
 }
 
 /*Book Add button on Page */
@@ -526,10 +517,10 @@
 	background-color:none;
     margin-top: 15px;
 }
-.newRelease .itemInfo .buttonAdd input[type = button]{
+.newRelease .itemInfo .buttonAdd input[type = button],input[type = submit]{
 	width: 90%;
     margin-left:10px;
-    margin-top:-10px;
+    margin-top:20px;
     background-color: lightcoral;
     font-family: Arial;
 	font-size: 15px;
@@ -543,7 +534,7 @@
     border-radius: 12px;
 }
 
-.newRelease .itemInfo .buttonAdd input[type = button]:hover{
+.newRelease .itemInfo .buttonAdd input[type = button]:hover,input[type = submit]:hover{
 	color: white;
     background-color: red;
 }
@@ -565,7 +556,7 @@
 	border-style:ridge;
 	border-width:0px;
 	width:170px;
-	height:auto;
+	height:450px;
 	margin-left:5px;
 	margin-right:5px;
 	margin-bottom:10px;
@@ -634,12 +625,9 @@
     margin-top:10px;
     margin-left:0px;
 }
-.forChildren .itemInfo .itemPrice span{
-    margin-left:20px;
-	font-size: 14px;
-	font-family:serif;
-	cursor:pointer;
-    text-decoration: none;
+.forChildren .itemInfo .itemPrice p{
+    margin-left:15px;
+	cursor:default;
 }
 
 /*Book Add button on Page */
@@ -647,10 +635,10 @@
 	background-color:none;
     margin-top: 15px;
 }
-.forChildren .itemInfo .buttonAdd input[type = button]{
+.forChildren .itemInfo .buttonAdd input[type = button],input[type = submit]{
 	width: 90%;
     margin-left:10px;
-    margin-top:-10px;
+    margin-top:20px;
     background-color: lightcoral;
     font-family: Arial;
 	font-size: 15px;
@@ -664,7 +652,7 @@
     border-radius: 12px;
 }
 
-.forChildren .itemInfo .buttonAdd input[type = button]:hover{
+.forChildren .itemInfo .buttonAdd input[type = button]:hover,input[type = submit]:hover{
 	color: white;
     background-color: red;
 }

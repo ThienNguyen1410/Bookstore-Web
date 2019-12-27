@@ -34,7 +34,7 @@
     margin-left: 10px;
     position: relative;
 }
-.mainsidecontact .contact_form input[name = contact_form]{
+.mainsidecontact .contact_form input[type=text],input[type=email]{
     width: 600px; 
     padding: 12px 20px; 
     display: inline-block; 

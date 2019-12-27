@@ -1,0 +1,61 @@
+.mainside {
+  background: whitesmoke;
+  margin:auto;
+  margin-top: 150px;
+  margin-left:380px;
+  font-size: 28px; 
+  padding: 0px 10px;
+  width: 1090px;
+  height:auto;
+  border-radius: 12px;
+}
+
+.mainside .main{
+	width:1100;}
+.cartButton{
+	background-color: whitesmoke;
+	position:fixed;
+	width:350px;
+	height:250px;
+	left:10px;
+	top:150px;
+	border-radius: 12px;
+}
+.cartButton p{
+   font-size: 30px;
+	font-family: fantasy;
+}
+
+.cartButton .Delete{
+	margin:auto;
+	margin-left:10px;
+	margin-top:60px;
+	margin-bottom: 10px;
+}
+.cartButton .Payment{
+	margin:auto;
+	margin-left:200px;
+	margin-top:-55px;
+	margin-bottom: 10px;
+}
+.cartButton .Delete input[type=submit]{
+	background-color: lightcoral;
+	border-radius: 12px;
+	border-width: 0;
+	font-size: 30px;
+	font-family: cursive;
+}
+.cartButton .Delete input[type=submit]:hover{
+	background-color: #e62b2b;
+}
+.cartButton .Payment input[type=submit]{
+	background-color: #00d5d5;
+	border-radius: 12px;
+	border-width: 0;
+	font-size: 30px;
+	font-family: cursive;
+}
+
+.cartButton .Payment input[type=submit]:hover{
+	background-color: #11ffff;
+}

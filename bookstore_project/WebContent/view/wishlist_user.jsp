@@ -65,8 +65,6 @@
 		           <a class="categoryName" href="#"><b>Category | </b></a>
 		           <ul>
 		             <li><a href="Art_Photography_user.jsp">Art, Photography</a></li>
-		             <li><a href="bestSeller_user.jsp">Best seller</a></li>
-		             <li><a href="best2019_user.jsp">Best in 2019</a></li>
 		             <li><a href="forChildren_user.jsp">Children books</a></li>
 		             <li><a href="Life-style_Self-help_user.jsp">Life-style/Self-help</a></li>
 		             <li><a href="Novels_user.jsp">Novels</a></li>
@@ -78,7 +76,7 @@
 		      </ul>
 		      
 		      <ul class="leftPart">
-		           <li class="wishlist_link"><a href="wishlist_user.jsp"><b>Wishlist | </b></a></li>
+		           <li class="wishlist_link"><a href="wishlist_user.jsp" style="margin-top:-5px;"><b><span style="font-size: 20px;">&#9825;</span> Wishlist | </b></a></li>
 		           <li class="cart_link"><a href="cart_user.jsp"><i class="fa fa-shopping-cart"></i><b>Cart |</b></a></li>
 		       </ul>
 		     </div>
@@ -103,16 +101,28 @@
 	            	<input type="image" style="width: 220px;height: 280px;margin-bottom:20px; border-radius: 12px;"name="imageHome" src="<%=book.getImage()%>">
 	            </form>
             </td>
-            <td><p style = "width:300px; font-family: Arial; font-weight: 10;"><%=book.getBtitle()%></p></td>
-            <td><p style="text-decoration: underline;"><%=book.getBprice()%> VND</p></td>
+            <td><p style=" font-family:serif; font-size: 35px; width:300px;"><%=book.getBtitle()%></p></td>
+            <td ><p style="font-family:serif;">Sale <%=book.getSaleOffPercent()%>%</p></td>
+            <td>
+              <%if(book.getSaleOffPercent() >0){ %>
+                 <p style="text-decoration: underline;"><%=book.getSaleOffPrice()%> VND</p>
+                 <p style="text-decoration: line-through; font-size: 15px; margin-top: -20px;"><%=book.getBprice()%> VND</p>
+              <%}else{%>
+              	<p style="text-decoration: underline; font-family:serif;"><%=book.getBprice()%> VND</p>
+              <%} %>
+             </td>
             <td>
                  <form action="${pageContext.request.contextPath}/DeleteFromWishList" method="get">
                    <input type="hidden" name="itemID" value="<%=book.getBID()%>">
                    <input type="hidden" name="UserName" value="<%=cus.getUserName()%>">
-                   <input style="border: none; background-color: whitesmoke; cursor:pointer; color: red;" type="submit" value ="Delete">
+                   <button style="border: none; background-color: whitesmoke; cursor:pointer; color: red;" type="submit" ><i class="fa fa-trash"></i></button>
                  </form>
             </td>
-            <td><a href="#"><input type="button" style = " background-color: lightcoral; font-family: Arial; font-size: 25px; cursor:pointer; border: none;" name="buttonAdd" value="Add to cart"></a></td>
+            <td>
+            <%if (book.getQuantity() > 0){ %>
+                <a href="${pageContext.request.contextPath}/Cart_servlet?BID=<%=book.getBID()%>&UserName=<%=cus.getUserName()%>&UID=<%=cus.getUID()%>"><i class="fa fa-shopping-cart" style="color:navy ;"></i></a>
+                <%}%>
+            </td>
           </tr>
           
           </tbody>
@@ -120,5 +130,38 @@
           </table>
           
         </div>  
+        
+        <div class="footer">
+        <div class="center">
+          <h2>----------Follow us----------</h2><br>
+                <a id="icon_fb" href="https://www.facebook.com/" ><i class='fab fa-facebook-f fa-2x'></i></a>
+                <a id="icon_ins" href="https://www.instagram.com/"><i class='fab fa-instagram fa-2x'></i></a>
+                <a id="icon_twi" href="https://twitter.com/"><i class='fab fa-twitter fa-2x'></i></a>
+                <a id="icon_yt" href="https://youtube.com/"><i class='fab fa-youtube fa-2x'></i></a>
+         </div>
+         
+         <div class="bottom">
+	        <div class="Explore">
+	          <h1>Explore</h1>
+	          <a href="#">About Us</a>
+	          <a href="profile_user.jsp">Your profile</a>
+	        </div>
+	        
+	         <div class="Support">
+	          <h1>Support</h1>
+	          	 <a href="term.jsp">Our Policy and Term</a>
+	             <a href="contact_user.jsp">Contact</a>
+	        </div>
+        
+	       <div class="Contact" style="">
+	          <h1>Contact</h1>
+	          <p>Phone Number:809532840</p>
+	          <p>Email:HTP_CORP@gmail.com</p>
+	          <p>Address:...................</p>      
+	        </div>
+      </div>
+      
+      <div class="end"><p>Copyright 2019-2019 HTP-CORP - All Rights Reserved. </p></div>
+    </div>
     </body>
 </html>

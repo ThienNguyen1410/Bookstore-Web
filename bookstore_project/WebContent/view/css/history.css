@@ -1,0 +1,9 @@
+.body_history{
+	margin:auto;
+	margin-top: 150px;
+	background-color: whitesmoke;
+	width: 1000px;
+	height:1000px;
+	overflow: auto;
+	border-radius: 12px;
+}

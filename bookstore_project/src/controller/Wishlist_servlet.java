@@ -38,27 +38,39 @@ public class Wishlist_servlet extends HttpServlet {
         	  String sql = "select BID from WishList where UserName ='"+UserN+"' AND BID ='"+BID+"'";
         	  rs = ps.executeQuery(sql);
         	  if(rs.next()) {
-        		  JOptionPane.showMessageDialog(null,"Product has been already in Wishlist.");
+        		  rs.close();
+        		  ps.close();
+        		  JOptionPane.showMessageDialog(null, "<html>"
+						                       + " <body>"
+						                       + "  <div>"
+						                       + "   <p style=\"font-size:10px; font-family:serif;\">Item existed in wishlist.</p>"
+						                       + "  </div>"
+						                       + " </body>"
+						                       + "</html>");
             	  response.sendRedirect(request.getHeader("referer"));
         	  }
         	  
         	  else {
+        		  rs.close();
+        		  ps.close();
 	        	  ps1 = c.createStatement();
 	        	  String sql1 = "insert into WishList (UserName, BID) values ('"+UserN+"','"+BID+"')";
 	        	  ps1.executeUpdate(sql1);
-	        		  JOptionPane.showMessageDialog(null,"Product has been added to Wishlist.");
+	        	  JOptionPane.showMessageDialog(null, "<html>"
+	                       + " <body>"
+	                       + "  <div>"
+	                       + "   <p style=\"font-size:15px; font-family:serif;\">Add to wishlist success</p>"
+	                       + "  </div>"
+	                       + " </body>"
+	                       + "</html>");
 	            	  response.sendRedirect(request.getHeader("referer")); 
+	              ps1.close();
         	  }  
-             
-              
-              ps1.close();
-              ps.close();
-              rs.close();
               c.close();
           }
           
           catch ( SQLException se ) {
-              System.out.println("SQL Exception:" + se.getMessage() );
+              System.out.println("SQL wishlist Exception:" + se.getMessage() );
            }
            catch ( Exception e ) {
                System.out.println("Exception:" + e.getMessage() );
@@ -71,14 +83,11 @@ public class Wishlist_servlet extends HttpServlet {
     			} catch (SQLException se) {
     				System.out.println("Exception in closing connection "+ se.getMessage() );
     			}
-    		}
-          
-	}
-
+    		}         
+	    }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		doGet(request, response);
 	}
 
 }

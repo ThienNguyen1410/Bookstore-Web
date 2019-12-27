@@ -28,14 +28,25 @@ public class Forget_pass_Pass_change extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		String email_re = request.getParameter("enter_email_");
         String pass_re = request.getParameter("enter_new_pass");              
-           
            if(pass_re.length() >= 8) {
               if(new CustomerDao().updatePass(email_re, pass_re)) {
-		           JOptionPane.showMessageDialog(null,"Success change!");
+            	  JOptionPane.showMessageDialog(null, "<html>"
+						                         + " <body>"
+						                         + "  <div>"
+						                         + "   <p style=\"font-size:10px; font-family:serif;\">Success change</p>"
+						                         + "  </div>"
+						                         + " </body>"
+						                         + "</html>");
 		           response.sendRedirect("view/login_signin.jsp");
              }   
               else {
-            	  JOptionPane.showMessageDialog(null,"Something wrong!");
+            	  JOptionPane.showMessageDialog(null, "<html>"
+						                         + " <body>"
+						                         + "  <div>"
+						                         + "   <p style=\"font-size:10px; font-family:serif;\">Something is wrong!</p>"
+						                         + "  </div>"
+						                         + " </body>"
+						                         + "</html>");
             	  response.sendRedirect(request.getHeader("referer"));
               }
            }

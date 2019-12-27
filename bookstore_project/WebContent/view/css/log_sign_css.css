@@ -1,7 +1,7 @@
     
 .mainsidelog{
     width: 1100px;
-    height: 600px;
+    height: 630px;
     background: whitesmoke;
     margin: auto;
     margin-top: 120px;
@@ -38,6 +38,7 @@
     background-color: lightcoral;
     border-radius: 12px;
     border-width: 0;
+    cursor: pointer;
 }
 .mainsidelog .log input[name = login]:hover{
     color: wheat;
@@ -75,43 +76,18 @@
     background-color: lightcoral;
     border-width:0;
     border-radius: 12px;
+    cursor: pointer;
 }
 .mainsidelog .reg input[name = register]:hover{
     color: wheat;
     background-color: red;
 }
 
-.mainsidelog a[id = icon_fb], .mainsidelog a[id = icon_ins], .mainsidelog a[id = icon_twi]{
-    font-size: 20px;
-}
-.mainsidelog a[id = icon_fb]{
-    margin-left: 480px;
-    margin-top: -10px;
-    margin-bottom: 20px;    
-}
-.mainsidelog a[id = icon_ins]{
-    margin-left: 20px;
-    margin-top: -10px;
-    margin-bottom: 20px;
-}
-.mainsidelog a[id = icon_twi]{
-    margin-left: 20px;
-    margin-top: -10px;
-    margin-bottom: 50px;
-}
-.mainsidelog a[id = icon_fb]:hover{
-    color: blue;
-}
-.mainsidelog a[id = icon_ins]:hover{
-    color: orange;
-}
-.mainsidelog a[id = icon_twi]:hover{
-    color: lightblue;
-}
 .mainsidelog h4{
     margin:auto;
-    margin-left: 450px;
-    margin-bottom: -10px;
+    margin-left: 500px;
+    margin-bottom: -20px;
+    z-index: 3;
 }
 hr.style-one {
 margin-top:-30px;

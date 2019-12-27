@@ -16,13 +16,14 @@
         <link rel="stylesheet" type="text/css" href="css\log_sign_css.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <script type="text/javascript" src="js\clock.js"></script>
-        <script type="text/javascript" src="js\reg_check.js"></script>
+        <script type="text/javascript" src="js\checkbox_cheked.js"></script>
         <script type="text/javascript" src="js\showPass.js"></script>
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
         
         
         <link rel="stylesheet" type="text/css" href="css\preloadPage.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script type="text/javascript" src="js\reg_check_JQuery.js"></script>
         <script type="text/javascript" src="js\preLoad.js"></script>
         
         <title>Join us</title>
@@ -96,7 +97,7 @@
                           <div class="log">
                           <a href="forget_pass.jsp" style="font-size: 15px; margin-left: 390px;">Forget password?</a><br>
                               <form  name="log" action="${pageContext.request.contextPath}/Login_bookstore_servlet" method="post">                              
-                                  <input style="margin-top: 10px;" name="log_form_user" type="email" placeholder="Email" id="log_form_user" value="<%out.print(email_log);%>" required>                                 
+                                  <input style="margin-top: 10px;" name="log_form_user" type="text" placeholder="Email" id="log_form_user" value="<%out.print(email_log);%>" required>                                 
                                   <input name="log_form_pass" type="password" placeholder="Password" id="log_form_pass" value="<%out.print(pass_log);%>" required><br>
                                   <input name="show_pass"  type="checkbox" onclick="myFunctionShow()"> Show password.<br>
                                   <input name="remem_pass" type="checkbox"> Remember my password.<br>
@@ -108,18 +109,22 @@
                       <td align="center">
                           <h2 style="font-size: 30px; margin-top: 20px; margin-left:-300px;">Register</h2>
                            <div class="reg" >    
-                                <form onSubmit="return checkForm(this)" name="reg" action="${pageContext.request.contextPath}/Register_bookstore_servlet" method="post">  
+                                <form onsubmit="return checkForm(this)"  name="reg" action="${pageContext.request.contextPath}/Register_bookstore_servlet" method="post">  
                                     <input name="reg_form_usern" type="text" placeholder="Username" value="<%out.print(user_reg);%>" id="reg_form_usern"><br>
-                                    <label style="color: red" id="reg_form_usern_check"></label><br> 
+                                    <label class="error" style="color: red; font-size: 10px;" id="reg_form_usern_check">Invalid User name!</label><br> 
+                                    
                                     <input name="reg_form_mail" type="email" placeholder="Email" value="<%out.print(email_reg);%>" id="reg_form_mail"><br>
-                                    <label style="color: red" id="reg_form_mail_check"></label><br> 
+                                    <label class="error" style="color: red; font-size: 10px;" id="reg_form_mail_check">Invalid Email!</label><br> 
+                                    
                                     <input name="reg_form_pass" type="password" placeholder="Password" id="reg_form_pass"><br>
-                                    <label style="color: red" id="reg_form_pass_check"></label><br> 
+                                    <label class="error" style="color: red; font-size: 10px;" id="reg_form_pass_check">Password must be at least 8 characters.</label><br> 
+                                    
                                     <input style="margin-bottom: 10px;" name="reg_form_ret_pass" type="password" placeholder="Confirm password" id="reg_form_ret_pass"><br>
-                                    <label style="color: red" id="reg_form_ret_pass_check"></label><br>
+                                    <label class="error" style="color: red; font-size: 10px;" id="reg_form_ret_pass_check">Password does not match.</label><br>
+                                    
                                     <input name="show_pass_reg"  type="checkbox" onclick="myFunctionShowReg()"> Show password.<br>
-                                    <input name="agree" type="checkbox" value="agree" id="agree"> Agree with our <a href="term.jsp">Term</a> and <a href="policy.jsp">Private Policy</a><br>
-                                    <input name="register" type="submit" value="Register">   
+                                    <input name="agree" class="agree" type="checkbox" value="agree" id="agree"> Agree with our <a href="term.jsp">Term</a> and <a href="policy.jsp">Private Policy</a><br>
+                                    <input name="register" class="Register" type="submit" value="Register">   
                                 </form>
                           </div>
                       </td>
@@ -127,10 +132,44 @@
               </table>        
 
             <br><br><hr class="style-one">
-                <h4>-----Follow us-----</h4><br>
-                <a id="icon_fb" href="https://www.facebook.com/"><i class='fab fa-facebook-f'></i></a>
-                <a id="icon_ins" href="https://www.instagram.com/"><i class='fab fa-instagram'></i></a>
-                <a id="icon_twi" href="https://twitter.com/"><i class='fab fa-twitter'></i></a><br><br> 
-        </div>  
+             <h4>-----Or-----</h4><br>
+             <div style="margin:auto; width:100%; padding-left: 38%;">   
+                <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8081/bookstore_project/login-google&response_type=code&client_id=518030905519-j9vpcfh3f0g41c7va5157grpkpdnmemt.apps.googleusercontent.com&approval_prompt=force">
+                <img style="margin-top:-5px; width:300px; height:100px;" src="https://res.cloudinary.com/practicaldev/image/fetch/s--YVSXRIP0--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/c74ljgt1t4o1ko28ycm8.png"></a>  
+             </div>
+        </div>
+        
+        <div class="footer">
+        <div class="center">
+          <h2>----------Follow us----------</h2><br>
+                <a id="icon_fb" href="https://www.facebook.com/" ><i class='fab fa-facebook-f fa-2x'></i></a>
+                <a id="icon_ins" href="https://www.instagram.com/"><i class='fab fa-instagram fa-2x'></i></a>
+                <a id="icon_twi" href="https://twitter.com/"><i class='fab fa-twitter fa-2x'></i></a>
+                <a id="icon_yt" href="https://youtube.com/"><i class='fab fa-youtube fa-2x'></i></a>
+         </div>
+         
+         <div class="bottom">
+	        <div class="Explore">
+	          <h1>Explore</h1>
+	          <a href="bookstore_home.jsp">About Us</a>
+	          <a href="login_signin.jsp">Sign Up-Log In</a>
+	        </div>
+	        
+	         <div class="Support">
+	          <h1>Support</h1>
+	          	 <a href="term.jsp">Our Policy and Term</a>
+	             <a href="contact.jsp">Contact</a>
+	        </div>
+        
+	       <div class="Contact" style="">
+	          <h1>Contact</h1>
+	          <p>Phone Number:809532840</p>
+	          <p>Email:HTP_CORP@gmail.com</p>
+	          <p>Address:...................</p>      
+	        </div>
+      </div>
+      
+      <div class="end"><p>Copyright 2019-2019 HTP-CORP - All Rights Reserved. </p></div>
+    </div>  
     </body>
 </html>

@@ -1,0 +1,68 @@
+    
+.mainsidelog{
+    width: 500px;
+    height: 480px;
+    background: whitesmoke;
+    margin: auto;
+    margin-top: 120px;
+    border-radius: 12px;
+  }
+.mainsidelog h2{
+     margin-left: 180px;
+     font-size: 30px;
+     margin-top: 20px;
+  }
+.mainsidelog .reg{
+    position: relative;
+    margin-left: 150px;
+
+}
+.mainsidelog .reg input[name = reg_form_usern], .mainsidelog .reg input[name = reg_form_mail], .mainsidelog .reg input[name = reg_form_pass], .mainsidelog .reg input[name = reg_form_ret_pass]{
+    width: 410px; 
+    padding: 12px 20px; 
+    display: inline-block; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    font-size: 15px; 
+    margin-left: -100px;
+    margin-bottom:-10px;
+}
+.mainsidelog .reg input[name = agree]{
+    margin-top: 15px; 
+    margin-left:-100px;
+}
+.mainsidelog .reg input[name = show_pass_reg]{
+    margin-top: -20px; 
+    margin-left:-100px;
+}
+.mainsidelog .reg input[name = register]{
+    font-size: 25px;
+    margin-top: 20px; 
+    margin-left:-100px; 
+    width: 400px; 
+    background-color: lightcoral;
+    border-width:0;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.mainsidelog .reg input[name = register]:hover{
+    color: wheat;
+    background-color: red;
+}
+
+.mainsidelog h4{
+    margin:auto;
+    margin-left: 500px;
+    margin-bottom: -20px;
+    z-index: 3;
+}
+hr.style-one {
+margin-top:-30px;
+border: 0;
+height: 2px;
+background: black;
+background-color: black;
+color: black;
+
+}

@@ -1,0 +1,154 @@
+.mainside {
+  background: none;
+  margin:auto;
+  margin-top: 150px;;
+  font-size: 28px; 
+  padding: 0px 10px;
+  width: 1500px;
+  border-radius: 12px;
+  height:auto;
+}
+
+.mainside .title{
+  background-color: #26f2ba;
+  margin:auto;
+  margin-left:300px;
+  width: 700px;
+  padding-left: 240px;
+}
+
+.mainside .title h1{
+  font-family: sans-serif;
+}
+
+.mainside .summary{
+  margin:auto;
+  margin-left:1030px;
+  margin-top:-65px;
+  width: 400px;
+  height:200px;
+  padding-left: 0;
+}
+
+.mainside .summary .headd{
+  background-color: #ff0080;
+  margin:auto;
+  width: 400px;
+  height:50px;
+  padding-left: 20px;
+
+}
+
+.mainside .summary .headd h1{
+  font-family:fantasy;
+  font-size: 40px;
+  color:white;
+
+}
+
+.mainside .summary .bodyy i{
+  font-size: 20px;
+  padding-left: 20px;
+  
+}
+
+.mainside .summary .bodyy{
+	margin-top:-10px;
+	width: 400px;
+  height:auto;
+  background-color: whitesmoke;
+}
+.mainside .form{
+  background-color: whitesmoke;
+  margin:auto;
+  margin-left:300px;
+  margin-top:-150px;
+  width: 700px;
+  height:auto;
+}
+
+
+
+.formHead h1{
+	font-size: 30px;
+	font-family: sans-serif;
+	padding-left: 20px;
+}
+
+.formBody label{
+    font-size: 17px;
+    margin-left: 10px;
+    position: relative;
+}
+.formBody input[name = form_fullname],input[name = form_email],input[name = form_addresss], textarea[name = More_info]{
+    width: 600px; 
+    padding: 12px 20px; 
+    display: inline-block; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    font-size: 20px; 
+    margin-left: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.formBody textarea[name = More_info]{
+	height:200px;
+	text-align: 
+}
+.formHead input[type=radio]{
+	width:20px;
+	height:20px;
+	margin-left: 50px;
+	margin-bottom: 30px;
+}
+.hide {
+  display: none;
+  margin-left: 70px;
+  margin-bottom: 30px;
+}
+
+.hide input[type=text]{
+    width: 350px; 
+    padding: 12px 20px; 
+    display: inline-block; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    font-size: 20px; 
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.hide input[type=number]{
+    width: 40px; 
+    height:40px;
+    display: inline-block; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    font-size: 20px; 
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.formHead input[name=payment], .formBody input[name=payment]{
+	width: 150px; 
+    padding: 12px 20px; 
+    display: inline-block; 
+    border-width: 0px; 
+    border-radius: 12px; 
+    box-sizing: border-box; 
+    font-size: 20px; 
+    margin-left: 450px;
+    margin-bottom: 10px;
+    background-color: lightcoral;
+    cursor: pointer;
+}
+.formBody input[name=payment]{
+	width: 300px; 
+	margin-left: 390px;
+}
+.formHead input[name=payment]:hover, .formBody input[name=payment]:hover{
+    color: wheat;
+    background-color: red;
+}

@@ -72,8 +72,6 @@
 		           <a class="categoryName" href="#"><b>Category | </b></a>
 		           <ul>
 		             <li><a href="Art_Photography_user.jsp">Art, Photography</a></li>
-		             <li><a href="bestSeller_user.jsp">Best seller</a></li>
-		             <li><a href="best2019_user.jsp">Best in 2019</a></li>
 		             <li><a href="forChildren_user.jsp">Children books</a></li>
 		             <li><a href="Life-style_Self-help_user.jsp">Life-style/Self-help</a></li>
 		             <li><a href="Novels_user.jsp">Novels</a></li>
@@ -85,7 +83,7 @@
 		      </ul>
 		      
 		      <ul class="leftPart">
-		           <li class="wishlist_link"><a href="wishlist_user.jsp"><b>Wishlist | </b></a></li>
+		           <li class="wishlist_link"><a href="wishlist_user.jsp" style="margin-top:-5px;"><b><span style="font-size: 20px;">&#9825;</span> Wishlist | </b></a></li>
 		           <li class="cart_link"><a href="cart_user.jsp"><i class="fa fa-shopping-cart"></i><b>Cart |</b></a></li>
 		       </ul>
 		     </div>
@@ -98,7 +96,7 @@
           <div class="part"><a href="bookstore_home_user.jsp">Home</a></div>
           <div class="part"><a href="wishlist_user.jsp">Wishlist</a></div>
           <div class="part"><a href="cart_user.jsp">Order status</a></div>
-          <div class="part"><a href="#contact">Order history</a></div>
+          <div class="part"><a href="History_user.jsp">Order history</a></div>
         </div>
         
         
@@ -106,15 +104,53 @@
         <form action="profile_user_edit.jsp">
           <h1><b>Information</b></h1>
           <hr style="background-color: black;">
-          <h2>1.User name</h2>
+          <h2>1.Full Name</h2>
+          <p><input type="text" name="profile_full_name" value ="<% if(cus != null) { out.print(cus.getFullName());} else{out.print("");}%>" readonly></p>
+          <h2>2.Address (Optional)</h2>
+          <p><input type="text" name="profile_address" value ="<% if(cus != null) { out.print(cus.getAddress());} else{out.print("");}%>" readonly></p>
+          <h2>3.User name</h2>
           <p><input type="text" name="profile_user_name" value ="<% if(cus != null) { out.print(cus.getUserName());} else{out.print("");}%>" readonly></p>
-          <h2>2.Email</h2>
+          <h2>4.Email</h2>
           <p><input type="text" name="profile_email" value ="<% if(cus != null) { out.print(cus.getEmail());} else{out.print("");}%>" readonly></p>
-          <h2>3.Password</h2>
+          <h2>5.Password</h2>
           <p><input type="password" name="profile_pass" value ="<% if(cus != null) { out.print(cus.getPass());} else{out.print("");}%>" readonly></p>
           <p><input type="submit" name="edit_profile" value="EDIT"></p>
         </form>
         </div> 
        </div>  
+       
+       <div class="footer">
+        <div class="center">
+          <h2>----------Follow us----------</h2><br>
+                <a id="icon_fb" href="https://www.facebook.com/" ><i class='fab fa-facebook-f fa-2x'></i></a>
+                <a id="icon_ins" href="https://www.instagram.com/"><i class='fab fa-instagram fa-2x'></i></a>
+                <a id="icon_twi" href="https://twitter.com/"><i class='fab fa-twitter fa-2x'></i></a>
+                <a id="icon_yt" href="https://youtube.com/"><i class='fab fa-youtube fa-2x'></i></a>
+         </div>
+         
+         <div class="bottom">
+	        <div class="Explore">
+	          <h1>Explore</h1>
+	          <a href="#">About Us</a>
+	          <a href="profile_user.jsp">Your profile</a>
+	        </div>
+	        
+	         <div class="Support">
+	          <h1>Support</h1>
+	          	 <a href="term.jsp">Our Policy and Term</a>
+	             <a href="contact_user.jsp">Contact</a>
+	        </div>
+        
+	       <div class="Contact" style="">
+	          <h1>Contact</h1>
+	          <p>Phone Number:809532840</p>
+	          <p>Email:HTP_CORP@gmail.com</p>
+	          <p>Address:...................</p>      
+	        </div>
+      </div>
+      
+      <div class="end"><p>Copyright 2019-2019 HTP-CORP - All Rights Reserved. </p></div>
+    </div>
+       
     </body>
 </html>

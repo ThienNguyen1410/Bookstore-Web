@@ -4,8 +4,10 @@
     Author     : user
 --%>
 
+<%@page import="dao.BookDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="models.Book" %>
+<%@page import="dao.CartDao" %>
 <%@page import="javax.servlet.http.HttpServlet"%>
 <%@page import="javax.servlet.http.HttpServletRequest"%>
 <%@page import="javax.servlet.http.HttpServletResponse"%>
@@ -72,8 +74,6 @@
 		           <a class="categoryName" href="#"><b>Category | </b></a>
 		           <ul>
 		             <li><a href="Art_Photography.jsp">Art, Photography</a></li>
-		             <li><a href="bestSeller.jsp">Best seller</a></li>
-		             <li><a href="best2019.jsp">Best in 2019</a></li>
 		             <li><a href="forChildren.jsp">Children books</a></li>
 		             <li><a href="Life-style_Self-help.jsp">Life-style/Self-help</a></li>
 		             <li><a href="Novels.jsp">Novels</a></li>
@@ -85,7 +85,7 @@
 		      </ul>
 		      
 		      <ul class="leftPart">
-		           <li class="wishlist_link"><a href="login_signin.jsp"><b>Wishlist | </b></a></li>
+		           <li class="wishlist_link"><a href="login_signin.jsp" style="margin-top:-5px;"><b><span style="font-size: 20px;">&#9825;</span> Wishlist | </b></a></li>
 		           <li class="cart_link"><a href="login_signin.jsp"><i class="fa fa-shopping-cart"></i><b>Cart |</b></a></li>
 		       </ul>
 		     </div>
@@ -142,33 +142,140 @@
         <form action="login_signin.jsp">
           <div class="itemMainInfo">
              <div class="mainImg">
-                 <input type="image" name="mainImg" src="<%=session.getAttribute("Imaget")%>">
+                 <input type="image" name="mainImg" src="<%=session.getAttribute("Imaget")%>" onClick="autofill();return false;">
              </div>
              <div class="mainTitle">
                  <p><b><%=session.getAttribute("Btitlet")%></b><br>
                           --------------------------</p>
              </div>
              <div class="mainAuthor">
-                 <span><b>Author: </b></span><a href="author_<%=session.getAttribute("Bauthort")%>.jsp"><%=session.getAttribute("Bauthort")%></a>
+                 <span><b>Author: </b></span><a href="${pageContext.request.contextPath}/Author?Bauthor=<%=session.getAttribute("Bauthort")%>"><%=session.getAttribute("Bauthort")%></a>
              </div>
              <div class="mainPrice"> 
-               <p> <span><b>Price: </b></span> <%=session.getAttribute("Bpricet")%> VND<br>
+               <% int sale= (Integer)session.getAttribute("sale");
+                  int saleP= (Integer)session.getAttribute("salePrice");
+                  if(sale > 0){%>
+                  <p style="font-size:15px; color: purple;">Sale <%out.print(sale); %>%</p><br>
+                  <p style="margin-top: -50px"> <span><b>Price: </b></span> <%out.print(saleP);%> VND</p><br>
+                  <p style="margin-top: -50px"> <span style="font-size:15px; color: red; text-decoration: line-through;"><%=session.getAttribute("Bpricet")%> VND</span><br>
                          --------------------------</p>
+                    <%}else{ %>     
+                  <p> <span><b>Price: </b></span> <%=session.getAttribute("Bpricet")%> VND<br>
+                         --------------------------</p>
+                    <%} %>     
              </div>
              
              <div class="wishlist_bookPage"> 
                <input type="submit" name="buttonWish" value="Add to wishlist">
              </div>
-             <div class="addCart_bookPage"> 
-               <a href="login_signin.jsp"><input type="button" name="buttonCart" value="Add to cart"></a>   
-             </div>
+             
+             <%session.getAttribute("QuanStore");
+            Integer Quan = (Integer)session.getAttribute("QuanStore");
+            
+            if (Quan > 0){%>
+            
+                 <div class="addCart_bookPage"> 
+                  <a href="login_signin.jsp"><input type="button" name="buttonCart" value="Add to cart"></a>   
+                </div>
+                <%}else{ %>
+                  <div class="itemPrice">
+                  <span style="font-size:21px; margin-left: 450px; margin-top:20px;"><b>Out of stock</b></span><br>
+                </div>
+                <%} %>
+            
           </div>
           </form>
           
-          <div class="detail">
-             <h3>Book detail:</h3>
+          <div class="detail" style="margin-top: 50px;">
+             <h3>Book summary:</h3>
+             <p>................................................................</p>
+             <p>................................................................</p>
+             <p>................................................................</p>
+             <p>................................................................</p>
+             <p>................................................................</p>
           </div>
+          
+          <p style="margin-top: 20px; font-weight: 700;">Same Author</p>
+             
+          <div class="sameAuthor">      
+          
+             <%BookDao bd = new BookDao(); 
+             String author = (String) session.getAttribute("Bauthort");
+               for (Book book : bd.sameAuthor(author)){
+             %>
+             <form action="${pageContext.request.contextPath}/BookPage" method="get">
+
+              <div class ="itemInfo">
+                <div class = "itemImg">
+                    <input type ="hidden" name="itemID" value="<%=book.getBID()%>">
+                    <input type="image" name="imageHome" src="<%=book.getImage()%>" >
+                </div> 
+                
+                <div class="itemTitle">
+                   <p><%=book.getBtitle()%></p>
+                </div>
+              </div>
+            </form>
+              <%}%>
+          </div>
+          
+          <p style="margin-top: 20px; font-weight: 700;">Same Category</p>
+             
+          <div class="sameCategory">      
+          
+             <%String category = (String) session.getAttribute("Cate");
+               for (Book book : bd.sameCategory(category)){
+             %>
+             <form action="${pageContext.request.contextPath}/BookPage" method="get">
+
+              <div class ="itemInfo">
+                <div class = "itemImg">
+                    <input type ="hidden" name="itemID" value="<%=book.getBID()%>">
+                    <input type="image" name="imageHome" src="<%=book.getImage()%>" >
+                </div> 
+                
+                <div class="itemTitle">
+                   <p><%=book.getBtitle()%></p>
+                </div>
+              </div>
+            </form>
+              <%}%>
+          </div>
+          
         </div>  
        </div> 
+       
+       <div class="footer" style="margin-top:150px;">
+        <div class="center">
+          <h2>----------Follow us----------</h2><br>
+                <a id="icon_fb" href="https://www.facebook.com/" ><i class='fab fa-facebook-f fa-2x'></i></a>
+                <a id="icon_ins" href="https://www.instagram.com/"><i class='fab fa-instagram fa-2x'></i></a>
+                <a id="icon_twi" href="https://twitter.com/"><i class='fab fa-twitter fa-2x'></i></a>
+                <a id="icon_yt" href="https://youtube.com/"><i class='fab fa-youtube fa-2x'></i></a>
+         </div>
+         
+         <div class="bottom">
+	        <div class="Explore">
+	          <h1>Explore</h1>
+	          <a href="bookstore_home.jsp">About Us</a>
+	          <a href="login_signin.jsp">Sign Up-Log In</a>
+	        </div>
+	        
+	         <div class="Support">
+	          <h1>Support</h1>
+	          	 <a href="term.jsp">Our Policy and Term</a>
+	             <a href="contact.jsp">Contact</a>
+	        </div>
+        
+	       <div class="Contact" style="">
+	          <h1>Contact</h1>
+	          <p>Phone Number:809532840</p>
+	          <p>Email:HTP_CORP@gmail.com</p>
+	          <p>Address:...................</p>      
+	        </div>
+      </div>
+      
+      <div class="end"><p>Copyright 2019-2019 HTP-CORP - All Rights Reserved. </p></div>
+    </div>
     </body>
 </html>

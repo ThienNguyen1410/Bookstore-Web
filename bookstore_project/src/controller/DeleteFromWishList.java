@@ -8,7 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
 
 import models.ConnectionSqlite;
 
@@ -27,8 +26,6 @@ public class DeleteFromWishList extends HttpServlet {
 		try {
 			String sql = "Delete From WishList where UserName='"+UserN+"' AND BID='"+BookId+"'";
 			new ConnectionSqlite().excuteSql(sql);
-			
-				JOptionPane.showMessageDialog(null,"Successly deleted.");
           	    response.sendRedirect(request.getHeader("referer"));
 		}
 		catch ( SQLException se ) {

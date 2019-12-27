@@ -3,12 +3,15 @@ public class Book {
      private String BID;
      private String Btitle;
      private String Bauthor;
-     private double Bprice;
+     private int Bprice;
      private String Image;
      private int Quantity;
+     private int QuantityOrder;
+     private int SaleOffPercent;
+     private int SaleOffPrice;
 
 
-	public Book(String bID, String btitle, String bauthor, double bprice, String image, int Quantity) {
+	public Book(String bID, String btitle, String bauthor, int bprice, String image, int Quantity) {
 		super();
 		BID = bID;
 		Btitle = btitle;
@@ -46,11 +49,11 @@ public class Book {
 		Bauthor = bauthor;
 	}
 
-	public double getBprice() {
+	public int getBprice() {
 		return Bprice;
 	}
 
-	public void setBprice(double bprice) {
+	public void setBprice(int bprice) {
 		Bprice = bprice;
 	}
 
@@ -69,6 +72,35 @@ public class Book {
 
 	public void setQuantity(int quantity) {
 		Quantity = quantity;
+	}
+	
+	
+
+	public int getQuantityOrder() {
+		return QuantityOrder;
+	}
+
+	public void setQuantityOrder(int quantityOrder) {
+		QuantityOrder = quantityOrder;
+	}
+
+	
+	
+	
+	public int getSaleOffPercent() {
+		return SaleOffPercent;
+	}
+
+	public void setSaleOffPercent(int saleOffPercent) {
+		SaleOffPercent = saleOffPercent;
+	}
+
+	public int getSaleOffPrice() {
+		return SaleOffPrice;
+	}
+
+	public void setSaleOffPrice(int saleOffPrice) {
+		SaleOffPrice = saleOffPrice;
 	}
 
 	@Override

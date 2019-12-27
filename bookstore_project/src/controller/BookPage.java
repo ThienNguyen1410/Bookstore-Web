@@ -17,18 +17,11 @@ import models.ConnectionSqlite;
 @WebServlet(urlPatterns ="/BookPage")
 public class BookPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public BookPage() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String BID = request.getParameter("itemID");	
 		Connection c = null;
@@ -38,26 +31,36 @@ public class BookPage extends HttpServlet {
         try {
         	c = ConnectionSqlite.CreateMySqlConnection();
         	ps1 = c.createStatement();
-        	String sql = "select BID, Btitle, Bauthor, Bprice, Image from Book where BID ='"+ BID +"'";
+        	String sql = "select Book.BID, Btitle, Bauthor, Bprice, Image, Quantity, CategoryBook.CTID, Sale from Book, CategoryBook where Book.BID ='"+ BID +"' AND Book.BID=CategoryBook.BID";
         	rs = ps1.executeQuery(sql);
         	
         	if(rs.next()) {
-        		String BIDt = rs.getString("BID");
-        		String Btitlet = rs.getString("Btitle");
-        		String Bauthort = rs.getString("Bauthor");
-        		String Bpricet = rs.getString("Bprice");
-        		String Imaget = rs.getString("Image");
+        		String BIDt = rs.getString(1);
+        		String Btitlet = rs.getString(2);
+        		String Bauthort = rs.getString(3);
+        		String Bpricet = rs.getString(4);
+        		int price = Integer.parseInt(Bpricet);
+        		String Imaget = rs.getString(5);
+        		int QuanStore = rs.getInt(6);
+        		String Cate = rs.getString(7);
+        		int sale = rs.getInt(8);
+        		int salePrice = price - ((price * sale)/100);
+            	ps1.close();
+            	rs.close();
         		HttpSession session = request.getSession();
         		session.setAttribute("BIDt", BIDt);
         		session.setAttribute("Btitlet", Btitlet);
         		session.setAttribute("Bauthort", Bauthort);
         		session.setAttribute("Bpricet", Bpricet);
         		session.setAttribute("Imaget", Imaget);
+        		session.setAttribute("QuanStore", QuanStore);
+        		session.setAttribute("Cate", Cate);
+        		session.setAttribute("sale", sale);
+        		session.setAttribute("salePrice", salePrice);
         		
                 response.sendRedirect("view/bookPage.jsp");
              }
-        	ps1.close();
-        	rs.close();
+
         }
         
         catch ( SQLException se ) {
@@ -77,12 +80,7 @@ public class BookPage extends HttpServlet {
   		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 
 }

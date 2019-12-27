@@ -1,0 +1,42 @@
+.mainside {
+  background: white;
+  margin:auto;
+  margin-top: 150px;
+  font-size: 28px; 
+  width: 950px;
+  border-radius: 12px;
+  height:auto;
+  margin-bottom: 20px;
+}
+.addToStorage, .deleteFromStorage, .UpdateQuan{
+	margin-left: 20px;
+}
+
+.addToStorage span, .deleteFromStorage span, .UpdateQuan span{
+	margin-left: 30px;
+	font-size: 15px; 
+}
+
+.addToStorage input[type=text], .deleteFromStorage input[type=text], .UpdateQuan input[type=text]{
+	margin-left: 30px;
+	width: 700px; 
+    padding: 12px 20px; 
+    display: inline-block; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    font-size: 15px; 
+}
+
+.addToStorage input[type=submit], .deleteFromStorage input[type=submit], .UpdateQuan input[type=submit]{
+	width: 100px; 
+    padding: 12px 20px; 
+    display: inline-block; 
+    border-width: 0px; 
+    border-radius: 12px; 
+    box-sizing: border-box; 
+    font-size: 20px; 
+    margin-left: 630px;
+    margin-top: 10px;
+    background-color: lightcoral;
+}

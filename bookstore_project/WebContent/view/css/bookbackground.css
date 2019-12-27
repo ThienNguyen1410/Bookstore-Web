@@ -1,10 +1,12 @@
 .head{
 	background-color: #8a092d;
     width: 100%; 
+    margin-bottom: 10px;
     top: 0;
     position: fixed;
     z-index: 3;
     height:60px;
+   
 }
 form[name = head1]{
     
@@ -222,4 +224,99 @@ box:hover {
 }
 hr{
     background-color: black;
+}
+
+.footer {
+  margin-top: 5px;
+  margin-bottom:-15px;
+  background-color: #e2e2e2;
+  text-align: center;
+  height:auto;  
+  
+}
+.center {
+  margin: auto;
+  margin-top:10px;
+  width: 100%;
+  padding-top: :50px;
+}
+.center h2{
+	font-size: 20px;
+	margin-bottom: -20px;
+}
+
+.center i{
+	font-size: 20px;
+	margin-right: 20px;
+}
+
+.center a[id = icon_fb]{
+	padding-left: 10px;
+}
+.center a[id = icon_fb]:hover{
+	color: blue;
+}
+
+.center a[id = icon_ins]:hover{
+	color: orange;
+}
+
+.center a[id = icon_twi]:hover{
+	color: #1797f4;
+}
+
+.center a[id = icon_yt]:hover{
+	color: #dd0000;
+}
+.bottom{
+	margin:auto;
+    width:100%;
+    background-color: #b5b5b5;
+}
+.bottom a {
+  text-decoration: none;
+  font-size: 20px;
+  color: black;       
+  display: block;
+  font-family: Arial;
+  margin-top: 10px;
+}
+.bottom p{
+   font-size: 15px
+}
+.bottom a:hover {
+   text-decoration:underline;
+   margin-top: 10px;
+   
+}
+.Explore, .Support, .Contact {
+  margin:auto;
+  width: auto;
+  height: 200px; 
+}
+
+.Explore h1, .Support h1, .Contact h1{
+  margin-bottom: -10px;
+}
+.Explore{
+	margin-right:65%;
+	background-color: #CD5C5C;
+}
+
+.Support{
+	margin-top:-210px;
+}
+
+.Contact{
+	background-color: #9999ff;
+	margin-top:-210px;
+	margin-left:65%;
+}
+
+.end{
+	margin-top:-15px;
+	background-color: #004080;
+}
+.end p{
+	color: whitesmoke;
 }
