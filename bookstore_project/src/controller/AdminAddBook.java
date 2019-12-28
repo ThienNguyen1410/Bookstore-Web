@@ -2,8 +2,6 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.time.LocalTime;
 
 import javax.servlet.ServletException;
@@ -13,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.AdminDao;
-import models.ConnectionSqlite;
 import models.GetDate;
 
 @WebServlet(urlPatterns ="/AdminAddBook")
@@ -45,33 +42,27 @@ public class AdminAddBook extends HttpServlet {
     	String timeNow = time.toString();
 		
 		PrintWriter out = response.getWriter();
-		
-		
-		try {
-			String sql = "Select AID From Admin Where Aname ='"+Adname+"'";
-			ResultSet rs = new ConnectionSqlite().choseData(sql);		 
-			if(rs.next()){
-				String AID = rs.getString(1);
-				rs.close();
+
 				if(new AdminDao().selectIfExist(BID, Btitle, Bauthor)) {
-			    	 out.print("Some values are in DB");
+			    	 out.print("Book in DB");
 			     }
 			     else {
-			    	 new AdminDao().InsertadminBook(AID, BID, ADD, timeNow, Dateint);
-			    	 new AdminDao().insertIfNotExist(BID, Btitle, Bauthor, PriceInt, Image, QuanInt);
-			    	 out.print("Item added");
+			    	 
+			    	 if(new AdminDao().insertIfNotExist(BID, Btitle, Bauthor, PriceInt, Image, QuanInt)) {
+			    		 if(new AdminDao().InsertadminBook(Adname, BID, ADD, timeNow, Dateint)) {
+			    			 out.print("Item added");
+			    		 }
+			    		 else {
+								out.print("Can not sign to Admin control table");
+							}
+			    	 }
+			    	 else {
+			    		 out.print("Something wrong");
+			    	 }
+			    	 
 			     }
 			}
-			
-		} catch ( SQLException se ) {
-            System.out.println("SQL adminIDselect Exception:" + se.getMessage() );
-         }
-         catch ( Exception e ) {
-             System.out.println("Exception:" + e.getMessage() );
-          }
-	     
-	     
-	}
+		
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

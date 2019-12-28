@@ -176,23 +176,37 @@
                 </div>
                 
                 <%if (book.getQuantity() > 0){ %>
-                <div class="itemPrice">
-                  <span style="font-size:17px;">Remain:<%=book.getQuantity() %></span><br>
-                  <span style="color: #00BFFF; font-size:17px;"><b><%=book.getBprice() %> VND</b></span>
-                </div>
-                
-                <div class="buttonAdd">
-                <form action="${pageContext.request.contextPath}/Cart_servlet" method ="get">
-                  <input type ="hidden" name="BID" value="<%=book.getBID()%>"> 
-                  <input type ="hidden" name="UserName" value="<%=cus.getUserName()%>">
-                  <input type ="hidden" name="UID" value="<%=cus.getUID()%>"> 
-                  <input type="submit" name="buttonAdd" value="Add to cart">
-                </form>
-                </div>
-                <%}else{ %>
-                  <div class="itemPrice">
-                  <span style="font-size:17px; margin-bottom: -20px; margin-top:20px;"><b>Out of stock</b></span><br>
-                </div>
+	               <%if(book.getSaleOffPercent()>0){ %>
+	                <div class="itemPrice">
+	                  <p style="font-size:17px; ">Remain:<%=book.getQuantity() %></p><br>
+	                  <p style="font-size:12px; color: purple;margin-top: -50px;">Sale <%=book.getSaleOffPercent() %>%</p><br>
+	                  <p style="color: #00BFFF; font-size:17px;margin-top: -50px;"><b><%=book.getSaleOffPrice() %> VND</b></p><br>
+	                  <p style="font-size:10px; text-decoration: line-through; margin-top: -50px; margin-bottom: -50px;"><%=book.getBprice() %> VND</p><br>
+	                </div>
+	                
+	                <div class="buttonAdd">
+				                <form action="${pageContext.request.contextPath}/Cart_servlet" method ="get">
+				                  <input type ="hidden" name="BID" value="<%=book.getBID()%>"> 
+				                  <input type ="hidden" name="UserName" value="<%=cus.getUserName()%>">
+				                  <input type ="hidden" name="UID" value="<%=cus.getUID()%>"> 
+				                  <input type="submit" name="buttonAdd" value="Add to cart">
+				                </form>
+				              </div>
+	                   <%}else{ %>
+	                      <div class="itemPrice">
+			                  <p style="font-size:17px;">Remain:<%=book.getQuantity() %></p><br>
+			                  <p style="color: #00BFFF; font-size:17px; margin-top: -30px;margin-bottom: 10px "><b><%=book.getBprice() %> VND</b></p>
+			                </div>
+			                
+			                <div class="buttonAdd">
+				                <form action="${pageContext.request.contextPath}/Cart_servlet" method ="get">
+				                  <input type ="hidden" name="BID" value="<%=book.getBID()%>"> 
+				                  <input type ="hidden" name="UserName" value="<%=cus.getUserName()%>">
+				                  <input type ="hidden" name="UID" value="<%=cus.getUID()%>"> 
+				                  <input type="submit" name="buttonAdd" value="Add to cart">
+				                </form>
+				              </div>
+	                   <%} %>
                 <%} %>
                 
               </div>

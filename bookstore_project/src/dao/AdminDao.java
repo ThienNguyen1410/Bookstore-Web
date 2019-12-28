@@ -28,10 +28,11 @@ public class AdminDao {
 		return false;
 	}
 	
-	public void InsertadminBook (String AID, String BID, String function, String time, int Date) {
-		String sql = "insert into AdminBook (AID, BID, function, time, Date) values ('"+AID+"','"+BID+"','"+function+"','"+time+"',"+Date+")";
+	public boolean InsertadminBook (String AID, String BID, String function, String time, int Date) {
+		String sql = "insert into AdminBook (Aname, BID, function, time, Date) values ('"+AID+"','"+BID+"','"+function+"','"+time+"',"+Date+")";
 		try {
 			new ConnectionSqlite().excuteSql(sql);
+			return true;
 		}
 		catch ( SQLException se ) {
             System.out.println("SQL InsertadminBook Exception:" + se.getMessage() );
@@ -39,7 +40,7 @@ public class AdminDao {
          catch ( Exception e ) {
              System.out.println("Exception:" + e.getMessage() );
           }
-		
+		return false;
 	}
 	
 	public ArrayList<Book> showBooks_newRelease(){
@@ -71,10 +72,11 @@ public class AdminDao {
 	}
 	
 	public boolean selectIfExist(String BID, String Btitle, String Bauthor) {
-		String sql ="Select * From Book where BID='"+BID+"' AND Btitle='"+Btitle+"' AND Bauthor='"+Bauthor+"'";
+		String sql ="Select BID, Btitle, Bauthor From Book where BID='"+BID+"' AND Btitle='"+Btitle+"' AND Bauthor='"+Bauthor+"'";
 		try {
 			ResultSet rs = new ConnectionSqlite().choseData(sql);
-			if(rs.next()) {
+			while(rs.next()) {
+				rs.close();
 				return true;
 			}
 		}
@@ -87,10 +89,14 @@ public class AdminDao {
 		return false;
 	}
 	
-	public void insertIfNotExist(String BID, String Btitle, String Bauthor, int Bprice, String Image, int Quantity) {
-		String sql = "insert into Book (BID, Btitle, Bauthor, Bprice, Image, Quantity) values ('"+BID+"','"+Btitle+"','"+Bauthor+"',"+Bprice+",'"+Image+"',"+Quantity+")";
+	public boolean selectIfExistForUpdate(String BID) {
+		String sql ="Select BID, Btitle, Bauthor From Book where BID='"+BID+"'";
 		try {
-			new ConnectionSqlite().excuteSql(sql);
+			ResultSet rs = new ConnectionSqlite().choseData(sql);
+			while(rs.next()) {
+				rs.close();
+				return true;
+			}
 		}
 		catch ( SQLException se ) {
             System.out.println("SQL selectIfExist Exception:" + se.getMessage() );
@@ -98,6 +104,23 @@ public class AdminDao {
          catch ( Exception e ) {
              System.out.println("Exception:" + e.getMessage() );
           }
+		return false;
+	}
+	
+	public boolean insertIfNotExist(String BID, String Btitle, String Bauthor, int Bprice, String Image, int Quantity) {
+		String sql = "insert into Book (BID, Btitle, Bauthor, Bprice, Image, Quantity) values ('"+BID+"','"+Btitle+"','"+Bauthor+"',"+Bprice+",'"+Image+"',"+Quantity+")";
+		try {
+			new ConnectionSqlite().excuteSql(sql);
+			return true;
+		}
+		catch ( SQLException se ) {
+            System.out.println("SQL selectIfExist Exception:" + se.getMessage() );
+         }
+         catch ( Exception e ) {
+             System.out.println("Exception:" + e.getMessage() );
+          }
+		
+		return false;
 	}
 	
 	

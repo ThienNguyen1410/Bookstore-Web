@@ -2,8 +2,6 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.time.LocalTime;
 
 import javax.servlet.ServletException;
@@ -13,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.AdminDao;
-import models.ConnectionSqlite;
 import models.GetDate;
 
 @WebServlet(urlPatterns ="/AdminUpdateBook")
@@ -41,29 +38,20 @@ public class AdminUpdateBook extends HttpServlet {
     	String timeNow = time.toString();
 		
 		PrintWriter out = response.getWriter();
-		
-		
-		try {
-			String sql = "Select AID From Admin Where Aname ='"+Adname+"'";
-			ResultSet rs = new ConnectionSqlite().choseData(sql);		 
-			if(rs.next()){
-				String AID = rs.getString(1);
-				rs.close();
+              if(new AdminDao().selectIfExistForUpdate(BID)) {
 				if(new AdminDao().UpdateExist(BID, QuanInt)) {
-					new AdminDao().InsertadminBook(AID, BID, UPDATE_QUAN, timeNow, Dateint);
-					out.print("Success Update");
+					if(new AdminDao().InsertadminBook(Adname, BID, UPDATE_QUAN, timeNow, Dateint)) {
+						out.print("Success Update");
+					}
 				}
 				else {
 					out.print("Something wrong");
 				}
-			}
-			
-		} catch ( SQLException se ) {
-            System.out.println("SQL adminIDselect Exception:" + se.getMessage() );
-         }
-         catch ( Exception e ) {
-             System.out.println("Exception:" + e.getMessage() );
-          }
+
+              }
+              else {
+            	  out.print("Book not in DB");
+              }
 		
 	}
 
